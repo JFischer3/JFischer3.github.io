@@ -3,145 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Interactive Portfolio</title>
+  <title>Modern Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Using a modern sans-serif font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Base styles */
-    body {
+    /* Base Reset & Typography */
+    * {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      box-sizing: border-box;
     }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f7f9fc;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    h1, h2, h3 {
+      margin-bottom: 0.5em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header */
     header {
-      background: #333;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
       color: #fff;
-      padding: 1em 0;
+      padding: 1.5em 0;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5em;
     }
     nav ul {
-      list-style: none;
-      padding: 0;
       display: flex;
       justify-content: center;
-      margin: 0;
-    }
-    nav li {
-      margin: 0 15px;
+      list-style: none;
+      gap: 2em;
     }
     nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.1em;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    /* Section Layout */
     section {
-      padding: 2em;
+      padding: 4em 2em;
       max-width: 1200px;
       margin: auto;
     }
-    h2 {
+    section:nth-of-type(even) {
+      background: #fff;
+    }
+    section:nth-of-type(odd) {
+      background: #f7f9fc;
+    }
+    section#about {
       text-align: center;
-      margin-bottom: 1em;
     }
 
-    /* Portfolio styles */
-    .filter-buttons {
-      text-align: center;
-      margin-bottom: 1em;
-    }
-    .filter-buttons button {
-      margin: 0 10px;
-      padding: 0.5em 1em;
-      border: none;
-      background: #333;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .filter-buttons button.active {
-      background: #555;
-    }
-    .portfolio-container {
+    /* Skills Section */
+    .skills-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 1em;
+      margin-top: 2em;
+    }
+    .skill-item {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 0.8em 1.2em;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-weight: 600;
+    }
+    .skill-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Portfolio Section */
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    .filter-buttons button {
+      margin: 0 10px;
+      padding: 0.6em 1.2em;
+      border: none;
+      background: #4e54c8;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+      font-weight: 600;
+    }
+    .filter-buttons button.active,
+    .filter-buttons button:hover {
+      background: #8f94fb;
+    }
+    .portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2em;
     }
     .portfolio-item {
       background: #fff;
-      padding: 1em;
-      margin: 1em;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      width: calc(33% - 2em);
-      box-sizing: border-box;
-      transition: transform 0.3s ease;
+      border-radius: 8px;
+      padding: 1.5em;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
     .portfolio-item:hover {
-      transform: scale(1.05);
-    }
-    @media (max-width: 768px) {
-      .portfolio-item {
-        width: calc(50% - 2em);
-      }
-    }
-    @media (max-width: 480px) {
-      .portfolio-item {
-        width: calc(100% - 2em);
-      }
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
     }
 
-    /* Contact form styles */
+    /* Contact Form */
     form {
       max-width: 600px;
-      margin: auto;
+      margin: 2em auto 0;
+      background: #fff;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
     form label {
-      display: block;
+      font-weight: 600;
       margin-bottom: 0.5em;
+      display: block;
     }
     form input, form textarea {
       width: 100%;
-      padding: 0.5em;
+      padding: 0.8em;
       margin-bottom: 1em;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
     }
     form button {
-      padding: 0.7em 1.5em;
+      width: 100%;
+      padding: 0.8em;
       border: none;
-      background: #333;
+      background: #4e54c8;
       color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 30px;
       cursor: pointer;
-      border-radius: 5px;
-      display: block;
-      margin: auto;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: #8f94fb;
     }
     #formResponse {
       text-align: center;
       margin-top: 1em;
-      color: green;
+      color: #28a745;
       display: none;
+      font-weight: 600;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 1em;
-      background: #333;
+      padding: 2em;
+      background: #222;
       color: #fff;
+    }
+    footer p {
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>My Portfolio</h1>
+    <h1>Modern Developer Portfolio</h1>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -150,42 +216,58 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I'm a passionate developer who loves crafting interactive and dynamic web experiences. Welcome to my portfolio!</p>
+    <p>I'm a passionate developer dedicated to building high-quality web applications and interactive experiences. With a keen eye for modern design and a focus on clean, maintainable code, I bring creative solutions to every project.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills & Technologies</h2>
+    <div class="skills-list">
+      <div class="skill-item">HTML5</div>
+      <div class="skill-item">CSS3</div>
+      <div class="skill-item">JavaScript</div>
+      <div class="skill-item">React</div>
+      <div class="skill-item">Node.js</div>
+      <div class="skill-item">Express</div>
+      <div class="skill-item">MongoDB</div>
+      <div class="skill-item">Git</div>
+      <div class="skill-item">Responsive Design</div>
+    </div>
   </section>
 
   <!-- Portfolio Section -->
   <section id="portfolio">
-    <h2>Portfolio</h2>
+    <h2>Projects</h2>
     <div class="filter-buttons">
       <button data-filter="all" class="active">All</button>
-      <button data-filter="web">Web</button>
-      <button data-filter="design">Design</button>
-      <button data-filter="photo">Photography</button>
+      <button data-filter="frontend">Frontend</button>
+      <button data-filter="backend">Backend</button>
+      <button data-filter="fullstack">Full Stack</button>
     </div>
     <div class="portfolio-container">
-      <div class="portfolio-item" data-category="web">
-        <h3>Web Project 1</h3>
-        <p>A dynamic website built with modern technologies.</p>
+      <div class="portfolio-item" data-category="frontend">
+        <h3>React Dashboard</h3>
+        <p>An interactive dashboard built with React featuring real-time data visualization and a modern UI design.</p>
       </div>
-      <div class="portfolio-item" data-category="design">
-        <h3>Design Project 1</h3>
-        <p>Creative design solutions for modern brands.</p>
+      <div class="portfolio-item" data-category="backend">
+        <h3>REST API Server</h3>
+        <p>A secure and scalable RESTful API built with Node.js and Express, handling high traffic and complex data.</p>
       </div>
-      <div class="portfolio-item" data-category="photo">
-        <h3>Photography Project 1</h3>
-        <p>Stunning visuals captured from around the world.</p>
+      <div class="portfolio-item" data-category="fullstack">
+        <h3>E-Commerce Platform</h3>
+        <p>A full stack e-commerce application with an engaging user interface, robust backend, and integrated payment solutions.</p>
       </div>
-      <div class="portfolio-item" data-category="web">
-        <h3>Web Project 2</h3>
-        <p>Responsive web application with interactive UI.</p>
+      <div class="portfolio-item" data-category="frontend">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio website showcasing projects, skills, and interactive design elements.</p>
       </div>
-      <div class="portfolio-item" data-category="design">
-        <h3>Design Project 2</h3>
-        <p>Innovative designs tailored to client needs.</p>
+      <div class="portfolio-item" data-category="backend">
+        <h3>Chat Application API</h3>
+        <p>An API supporting a real-time chat application, built with WebSocket technology for dynamic communication.</p>
       </div>
-      <div class="portfolio-item" data-category="photo">
-        <h3>Photography Project 2</h3>
-        <p>Capturing moments that tell a story.</p>
+      <div class="portfolio-item" data-category="fullstack">
+        <h3>Project Management Tool</h3>
+        <p>A comprehensive full stack tool for project tracking and team collaboration featuring authentication and data analytics.</p>
       </div>
     </div>
   </section>
@@ -195,21 +277,21 @@
     <h2>Contact Me</h2>
     <form id="contactForm">
       <label for="name">Name:</label>
-      <input type="text" id="name" required>
+      <input type="text" id="name" placeholder="Your name" required>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" required>
+      <input type="email" id="email" placeholder="Your email" required>
 
       <label for="message">Message:</label>
-      <textarea id="message" rows="5" required></textarea>
+      <textarea id="message" rows="5" placeholder="Your message" required></textarea>
 
       <button type="submit">Send Message</button>
     </form>
-    <p id="formResponse">Thank you for your message!</p>
+    <p id="formResponse">Thank you for reaching out. I'll get back to you soon!</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 My Portfolio</p>
+    <p>&copy; 2025 Modern Developer Portfolio. All rights reserved.</p>
   </footer>
 
   <script>
@@ -219,7 +301,7 @@
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
-        // Update active button
+        // Update active button state
         filterButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
 
@@ -237,7 +319,7 @@
     // Basic contact form submission handling
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      // In a real-world scenario, you'd send the form data to a server here.
+      // In a production environment, send form data to the server here.
       document.getElementById('formResponse').style.display = 'block';
       this.reset();
     });

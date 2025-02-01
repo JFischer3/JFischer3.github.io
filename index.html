@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Interactive Portfolio</title>
+  <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1em 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+    nav li {
+      margin: 0 15px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    section {
+      padding: 2em;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    /* Portfolio styles */
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .filter-buttons button {
+      margin: 0 10px;
+      padding: 0.5em 1em;
+      border: none;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .filter-buttons button.active {
+      background: #555;
+    }
+    .portfolio-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .portfolio-item {
+      background: #fff;
+      padding: 1em;
+      margin: 1em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: calc(33% - 2em);
+      box-sizing: border-box;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .portfolio-item {
+        width: calc(50% - 2em);
+      }
+    }
+    @media (max-width: 480px) {
+      .portfolio-item {
+        width: calc(100% - 2em);
+      }
+    }
+
+    /* Contact form styles */
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    form button {
+      padding: 0.7em 1.5em;
+      border: none;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      display: block;
+      margin: auto;
+    }
+    #formResponse {
+      text-align: center;
+      margin-top: 1em;
+      color: green;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm a passionate developer who loves crafting interactive and dynamic web experiences. Welcome to my portfolio!</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="filter-buttons">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="web">Web</button>
+      <button data-filter="design">Design</button>
+      <button data-filter="photo">Photography</button>
+    </div>
+    <div class="portfolio-container">
+      <div class="portfolio-item" data-category="web">
+        <h3>Web Project 1</h3>
+        <p>A dynamic website built with modern technologies.</p>
+      </div>
+      <div class="portfolio-item" data-category="design">
+        <h3>Design Project 1</h3>
+        <p>Creative design solutions for modern brands.</p>
+      </div>
+      <div class="portfolio-item" data-category="photo">
+        <h3>Photography Project 1</h3>
+        <p>Stunning visuals captured from around the world.</p>
+      </div>
+      <div class="portfolio-item" data-category="web">
+        <h3>Web Project 2</h3>
+        <p>Responsive web application with interactive UI.</p>
+      </div>
+      <div class="portfolio-item" data-category="design">
+        <h3>Design Project 2</h3>
+        <p>Innovative designs tailored to client needs.</p>
+      </div>
+      <div class="portfolio-item" data-category="photo">
+        <h3>Photography Project 2</h3>
+        <p>Capturing moments that tell a story.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formResponse">Thank you for your message!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+
+  <script>
+    // Filtering functionality for portfolio items
+    const filterButtons = document.querySelectorAll('.filter-buttons button');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+        portfolioItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Basic contact form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In a real-world scenario, you'd send the form data to a server here.
+      document.getElementById('formResponse').style.display = 'block';
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

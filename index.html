@@ -136,6 +136,25 @@
         font-size: 0.9rem;
       }
 
+      .action-pill.status-pill {
+        position: relative;
+        border-color: rgba(58, 163, 255, 0.7);
+        box-shadow: 0 0 0 0 rgba(58, 163, 255, 0.6);
+        animation: pulse-outline 2.2s ease-in-out infinite;
+      }
+
+      @keyframes pulse-outline {
+        0% {
+          box-shadow: 0 0 0 0 rgba(58, 163, 255, 0.6);
+        }
+        60% {
+          box-shadow: 0 0 0 10px rgba(58, 163, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(58, 163, 255, 0);
+        }
+      }
+
       .grid {
         display: grid;
         gap: 1.5rem;
@@ -396,6 +415,11 @@
           transition-duration: 0.01ms !important;
           scroll-behavior: auto !important;
         }
+
+        .action-pill.status-pill {
+          animation: none;
+          box-shadow: 0 0 0 2px rgba(58, 163, 255, 0.5);
+        }
       }
     </style>
   </head>
@@ -411,9 +435,10 @@
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
-          <a href="#tools">Cyber Tools</a>
+          <a href="#tools">Security Toolkit</a>
           <a href="#projects">Projects</a>
           <a href="#certifications">Certifications</a>
+          <a href="#audit-grc">IT Audit &amp; GRC Systems</a>
           <a href="#contact">Contact</a>
         </nav>
       </aside>
@@ -430,7 +455,7 @@
             </div>
             <div class="topbar-actions">
               <span class="action-pill">Last updated: {PLACEHOLDER: date}</span>
-              <span class="action-pill">Status: Open to opportunities</span>
+              <span class="action-pill status-pill">Status: Open to opportunities</span>
             </div>
           </div>
 
@@ -485,9 +510,18 @@
                 SOX compliance activities.
               </p>
               <ul>
-                <li>{PLACEHOLDER: control testing detail}</li>
-                <li>{PLACEHOLDER: documentation or evidence collection detail}</li>
-                <li>{PLACEHOLDER: stakeholder coordination detail}</li>
+                <li>
+                  Supported BISO partners with SOX 404 IT compliance governance, including training
+                  and awareness for business partners and BISOs.
+                </li>
+                <li>
+                  Delivered templates and guidance, identified key controls and control owners, and
+                  coordinated issue remediation across business units.
+                </li>
+                <li>
+                  Built enterprise partnerships with GAA (Internal Audit) and PwC, and contributed
+                  to the Cyber Regulatory Compliance (CRC) team’s efficient support model.
+                </li>
               </ul>
             </article>
             <article class="timeline-item">
@@ -514,34 +548,79 @@
             <button type="button" data-toggle="compliance">Compliance</button>
             <button type="button" data-toggle="audit">Audit</button>
           </div>
-          <p>{PLACEHOLDER: brief description of skill focus areas}</p>
+          <p>
+            Security+ aligned strengths across governance, risk, and compliance, spanning secure
+            architectures, identity and access controls, incident response, and risk mitigation
+            strategies.
+          </p>
           <div class="pill-group" data-toggle-list="skills">
-            <span class="pill" data-category="governance">{PLACEHOLDER: confirmed skill 1}</span>
-            <span class="pill" data-category="risk">{PLACEHOLDER: confirmed skill 2}</span>
-            <span class="pill" data-category="compliance">{PLACEHOLDER: confirmed skill 3}</span>
-            <span class="pill" data-category="audit">{PLACEHOLDER: confirmed skill 4}</span>
+            <span class="pill" data-category="governance">Security Governance &amp; Policy</span>
+            <span class="pill" data-category="risk">Threats, Vulnerabilities &amp; Risk Response</span>
+            <span class="pill" data-category="compliance">Identity &amp; Access Management</span>
+            <span class="pill" data-category="audit">Audit Readiness &amp; Evidence Management</span>
+            <span class="pill" data-category="risk">Secure Network Architecture</span>
+            <span class="pill" data-category="compliance">Cryptography &amp; Data Protection</span>
+            <span class="pill" data-category="audit">Incident Response &amp; Recovery</span>
           </div>
         </section>
 
         <section id="tools" class="panel fade-in">
           <div class="panel-header">
-            <h3>Cyber Tools</h3>
+            <h3>Security Toolkit</h3>
             <span>Tooling footprint</span>
           </div>
           <div class="dashboard-row">
             <div>
               <div class="chart-placeholder">
-                Tool Mix Visualization<br />{PLACEHOLDER: confirmed tool distribution}
+                Tool Mix Visualization<br />Vulnerability, detection, and assessment tooling
               </div>
             </div>
             <div>
-              <p>{PLACEHOLDER: brief description of tool experience}</p>
+              <p>
+                Hands-on exposure to vulnerability management, attack simulation, and monitoring
+                platforms that support proactive risk reduction and audit readiness.
+              </p>
               <div class="pill-group" data-toggle-list="tools">
-                <span class="pill" data-category="grc">{PLACEHOLDER: confirmed tool 1}</span>
-                <span class="pill" data-category="cloud">{PLACEHOLDER: confirmed tool 2}</span>
-                <span class="pill" data-category="analysis">{PLACEHOLDER: confirmed tool 3}</span>
-                <span class="pill" data-category="analysis">{PLACEHOLDER: confirmed tool 4}</span>
+                <span class="pill" data-category="analysis">Nmap</span>
+                <span class="pill" data-category="analysis">Nessus</span>
+                <span class="pill" data-category="analysis">Kali Linux</span>
+                <span class="pill" data-category="analysis">Metasploit</span>
+                <span class="pill" data-category="analysis">Splunk</span>
+                <span class="pill" data-category="analysis">MITRE ATT&amp;CK</span>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="audit-grc" class="panel fade-in">
+          <div class="panel-header">
+            <h3>IT Audit &amp; GRC Systems</h3>
+            <span>Pre-implementation reviews &amp; compliance tooling</span>
+          </div>
+          <div class="dashboard-row">
+            <div>
+              <h4>Risk-Based Review Systems</h4>
+              <ul>
+                <li>Blackline</li>
+                <li>HighRadius</li>
+                <li>R2P</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Apps &amp; Frameworks</h4>
+              <ul>
+                <li>Workiva</li>
+                <li>Power BI</li>
+                <li>SOX 404</li>
+                <li>ISO 27001</li>
+                <li>NIST CSF</li>
+                <li>NIST 800-53</li>
+                <li>COSO</li>
+                <li>COBIT 2019</li>
+                <li>SOC 1</li>
+                <li>GDPR</li>
+                <li>PCI DSS</li>
+              </ul>
             </div>
           </div>
         </section>

@@ -287,6 +287,63 @@
         box-shadow: 0 18px 28px rgba(15, 23, 42, 0.1);
       }
 
+      .contact-card {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem 1.6rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--sky), var(--teal));
+        color: #ffffff;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 14px 24px rgba(15, 23, 42, 0.2);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .cta-button:hover,
+      .cta-button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 30px rgba(15, 23, 42, 0.25);
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .contact-form label {
+        display: grid;
+        gap: 0.45rem;
+        font-weight: 600;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        border-radius: 10px;
+        border: 1px solid #e2e8f0;
+        padding: 0.7rem 0.85rem;
+        font: inherit;
+      }
+
+      .contact-note {
+        margin: 0;
+        color: var(--slate);
+        font-size: 0.95rem;
+      }
+
       footer {
         text-align: center;
         padding: 2rem 1rem 3rem;
@@ -497,13 +554,43 @@
 
       <section id="contact" class="reveal">
         <h2 class="section-title">Contact Me</h2>
-        <p>Reach out to connect or collaborate.</p>
-        <ul>
-          <li>Email: {PLACEHOLDER: email address}</li>
-          <li>Phone: {PLACEHOLDER: phone number}</li>
-          <li>LinkedIn: {PLACEHOLDER: profile link}</li>
-          <li>GitHub: {PLACEHOLDER: profile link}</li>
-        </ul>
+        <div class="contact-card">
+          <p>Let’s connect about governance, risk, and compliance opportunities.</p>
+          <div class="contact-actions">
+            <a class="cta-button" href="mailto:{PLACEHOLDER: email address}">
+              Start a conversation
+            </a>
+            <p class="contact-note">Primary CTA — confirm destination before launch.</p>
+          </div>
+          <ul>
+            <li>Email: {PLACEHOLDER: email address}</li>
+            <li>LinkedIn: {PLACEHOLDER: LinkedIn profile}</li>
+            <li>GitHub: {PLACEHOLDER: GitHub profile}</li>
+          </ul>
+          <form
+            class="contact-form"
+            action="mailto:{PLACEHOLDER: email address}"
+            method="post"
+            enctype="text/plain"
+          >
+            <p class="contact-note">
+              Form submission is wired to a mailto placeholder and needs confirmation.
+            </p>
+            <label>
+              Your name
+              <input type="text" name="name" placeholder="{PLACEHOLDER: name}" />
+            </label>
+            <label>
+              Your email
+              <input type="email" name="email" placeholder="{PLACEHOLDER: email address}" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="{PLACEHOLDER: message}"></textarea>
+            </label>
+            <button class="cta-button" type="submit">Send message</button>
+          </form>
+        </div>
       </section>
     </main>
 

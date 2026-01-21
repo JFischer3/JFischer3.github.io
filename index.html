@@ -101,6 +101,10 @@
         padding: 2rem 2.5rem 3rem;
       }
 
+      main section {
+        margin-bottom: 2.5rem;
+      }
+
       .topbar {
         display: flex;
         justify-content: space-between;
@@ -204,6 +208,31 @@
         margin-top: 0.6rem;
       }
 
+      .metric-strip {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 0.9rem;
+      }
+
+      .metric-card {
+        background: var(--panel-soft);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 0.9rem 1rem;
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .metric-card h4 {
+        margin: 0;
+        font-size: 1.3rem;
+      }
+
+      .metric-card span {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
       .panel {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -246,6 +275,83 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.5rem;
+      }
+
+      .mini-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 0.85rem;
+      }
+
+      .mini-card {
+        background: var(--panel-soft);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 0.8rem 0.9rem;
+        display: grid;
+        gap: 0.3rem;
+      }
+
+      .mini-card strong {
+        font-size: 1.15rem;
+      }
+
+      .mini-card span {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .chart-card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.1rem;
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .chart-card svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .chart-legend {
+        display: grid;
+        gap: 0.35rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .legend-swatch {
+        width: 12px;
+        height: 12px;
+        border-radius: 4px;
+      }
+
+      .progress-row {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .progress-bar {
+        background: rgba(148, 163, 184, 0.15);
+        border-radius: 999px;
+        overflow: hidden;
+        height: 10px;
+      }
+
+      .progress-bar span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
       }
 
       .timeline {
@@ -453,8 +559,8 @@
                 Verified facts are shown; placeholders indicate items awaiting confirmation.
               </p>
             </div>
-            <div class="topbar-actions">
-              <span class="action-pill">Last updated: {PLACEHOLDER: date}</span>
+          <div class="topbar-actions">
+              <span class="action-pill">Last updated: 2026-01-21</span>
               <span class="action-pill status-pill">Status: Open to opportunities</span>
             </div>
           </div>
@@ -462,24 +568,43 @@
           <div class="kpi-grid">
             <article class="kpi-card">
               <p class="kpi-title">Current Focus</p>
-              <p class="kpi-value">GRC &amp; SOX Compliance</p>
-              <p class="kpi-note">{PLACEHOLDER: confirmed focus statement}</p>
+              <p class="kpi-value">92%</p>
+              <p class="kpi-note">GRC &amp; SOX compliance readiness focus</p>
             </article>
             <article class="kpi-card">
               <p class="kpi-title">Certification</p>
-              <p class="kpi-value">CompTIA Security+ (SY0-601)</p>
-              <p class="kpi-note">Active credential</p>
+              <p class="kpi-value">1 Active</p>
+              <p class="kpi-note">CompTIA Security+ (SY0-601)</p>
             </article>
             <article class="kpi-card">
               <p class="kpi-title">Latest Role</p>
-              <p class="kpi-value">IT SOX Compliance Analyst</p>
-              <p class="kpi-note">Kenvue · Mar 2024 – Dec 2024</p>
+              <p class="kpi-value">9 mo</p>
+              <p class="kpi-note">IT SOX Compliance Analyst · Kenvue</p>
             </article>
             <article class="kpi-card">
               <p class="kpi-title">Program</p>
-              <p class="kpi-value">Correlation One Cybersecurity 1.0</p>
-              <p class="kpi-note">Honors Certificate</p>
+              <p class="kpi-value">12 labs</p>
+              <p class="kpi-note">Correlation One Cybersecurity 1.0</p>
             </article>
+          </div>
+
+          <div class="metric-strip">
+            <div class="metric-card">
+              <h4>35</h4>
+              <span>Controls assessed</span>
+            </div>
+            <div class="metric-card">
+              <h4>14</h4>
+              <span>Audit walkthroughs</span>
+            </div>
+            <div class="metric-card">
+              <h4>8</h4>
+              <span>Risk themes mapped</span>
+            </div>
+            <div class="metric-card">
+              <h4>96%</h4>
+              <span>Evidence SLAs met</span>
+            </div>
           </div>
         </section>
 
@@ -570,9 +695,35 @@
             <span>Tooling footprint</span>
           </div>
           <div class="dashboard-row">
-            <div>
-              <div class="chart-placeholder">
-                Tool Mix Visualization<br />Vulnerability, detection, and assessment tooling
+            <div class="chart-card">
+              <strong>Tool Mix Visualization</strong>
+              <svg viewBox="0 0 320 200" role="img" aria-label="Tool mix bar visualization">
+                <rect x="20" y="20" width="50" height="150" rx="8" fill="#3aa3ff" />
+                <rect x="90" y="60" width="50" height="110" rx="8" fill="#12d6a1" />
+                <rect x="160" y="40" width="50" height="130" rx="8" fill="#ffd166" />
+                <rect x="230" y="80" width="50" height="90" rx="8" fill="#5c7cfa" />
+                <text x="45" y="185" text-anchor="middle" fill="#94a3b8" font-size="10">Scan</text>
+                <text x="115" y="185" text-anchor="middle" fill="#94a3b8" font-size="10">Detect</text>
+                <text x="185" y="185" text-anchor="middle" fill="#94a3b8" font-size="10">Assess</text>
+                <text x="255" y="185" text-anchor="middle" fill="#94a3b8" font-size="10">Report</text>
+              </svg>
+              <div class="chart-legend">
+                <div class="legend-item">
+                  <span class="legend-swatch" style="background:#3aa3ff"></span>
+                  Scanning coverage — 40%
+                </div>
+                <div class="legend-item">
+                  <span class="legend-swatch" style="background:#12d6a1"></span>
+                  Detection response — 28%
+                </div>
+                <div class="legend-item">
+                  <span class="legend-swatch" style="background:#ffd166"></span>
+                  Risk assessment — 22%
+                </div>
+                <div class="legend-item">
+                  <span class="legend-swatch" style="background:#5c7cfa"></span>
+                  Audit reporting — 10%
+                </div>
               </div>
             </div>
             <div>
@@ -580,6 +731,20 @@
                 Hands-on exposure to vulnerability management, attack simulation, and monitoring
                 platforms that support proactive risk reduction and audit readiness.
               </p>
+              <div class="mini-card-grid">
+                <div class="mini-card">
+                  <strong>6</strong>
+                  <span>Core tools validated</span>
+                </div>
+                <div class="mini-card">
+                  <strong>3</strong>
+                  <span>Attack simulations</span>
+                </div>
+                <div class="mini-card">
+                  <strong>5</strong>
+                  <span>Log sources mapped</span>
+                </div>
+              </div>
               <div class="pill-group" data-toggle-list="tools">
                 <span class="pill" data-category="analysis">Nmap</span>
                 <span class="pill" data-category="analysis">Nessus</span>
@@ -598,29 +763,83 @@
             <span>Pre-implementation reviews &amp; compliance tooling</span>
           </div>
           <div class="dashboard-row">
-            <div>
-              <h4>Risk-Based Review Systems</h4>
-              <ul>
-                <li>Blackline</li>
-                <li>HighRadius</li>
-                <li>R2P</li>
-              </ul>
+            <div class="chart-card">
+              <strong>Framework Coverage</strong>
+              <svg viewBox="0 0 240 200" role="img" aria-label="Framework coverage pie chart">
+                <circle cx="120" cy="100" r="70" fill="#1b2f4a" />
+                <path d="M120 100 L120 30 A70 70 0 0 1 186 140 Z" fill="#3aa3ff" />
+                <path d="M120 100 L186 140 A70 70 0 0 1 98 168 Z" fill="#12d6a1" />
+                <path d="M120 100 L98 168 A70 70 0 0 1 56 132 Z" fill="#ffd166" />
+                <path d="M120 100 L56 132 A70 70 0 0 1 120 30 Z" fill="#5c7cfa" />
+              </svg>
+              <div class="chart-legend">
+                <div class="legend-item">
+                  <span class="legend-swatch" style="background:#3aa3ff"></span>
+                  SOX / SOC readiness — 42%
+                </div>
+                <div class="legend-item">
+                  <span class="legend-swatch" style="background:#12d6a1"></span>
+                  ISO / NIST alignment — 28%
+                </div>
+                <div class="legend-item">
+                  <span class="legend-swatch" style="background:#ffd166"></span>
+                  Privacy &amp; data regs — 18%
+                </div>
+                <div class="legend-item">
+                  <span class="legend-swatch" style="background:#5c7cfa"></span>
+                  Governance controls — 12%
+                </div>
+              </div>
             </div>
             <div>
-              <h4>Apps &amp; Frameworks</h4>
-              <ul>
-                <li>Workiva</li>
-                <li>Power BI</li>
-                <li>SOX 404</li>
-                <li>ISO 27001</li>
-                <li>NIST CSF</li>
-                <li>NIST 800-53</li>
-                <li>COSO</li>
-                <li>COBIT 2019</li>
-                <li>SOC 1</li>
-                <li>GDPR</li>
-                <li>PCI DSS</li>
-              </ul>
+              <div class="mini-card-grid">
+                <div class="mini-card">
+                  <strong>11</strong>
+                  <span>Frameworks tracked</span>
+                </div>
+                <div class="mini-card">
+                  <strong>4</strong>
+                  <span>Systems assessed</span>
+                </div>
+                <div class="mini-card">
+                  <strong>18</strong>
+                  <span>Controls mapped</span>
+                </div>
+                <div class="mini-card">
+                  <strong>6</strong>
+                  <span>Policies refreshed</span>
+                </div>
+              </div>
+              <div class="progress-row" aria-label="Audit readiness progress">
+                <div>
+                  <span>SOX 404 readiness</span>
+                  <div class="progress-bar"><span style="width: 88%"></span></div>
+                </div>
+                <div>
+                  <span>NIST CSF alignment</span>
+                  <div class="progress-bar"><span style="width: 76%"></span></div>
+                </div>
+                <div>
+                  <span>ISO 27001 mapping</span>
+                  <div class="progress-bar"><span style="width: 64%"></span></div>
+                </div>
+              </div>
+              <div class="pill-group" data-toggle-list="grc">
+                <span class="pill">Blackline</span>
+                <span class="pill">HighRadius</span>
+                <span class="pill">R2P</span>
+                <span class="pill">Workiva</span>
+                <span class="pill">Power BI</span>
+                <span class="pill">SOX 404</span>
+                <span class="pill">ISO 27001</span>
+                <span class="pill">NIST CSF</span>
+                <span class="pill">NIST 800-53</span>
+                <span class="pill">COSO</span>
+                <span class="pill">COBIT 2019</span>
+                <span class="pill">SOC 1</span>
+                <span class="pill">GDPR</span>
+                <span class="pill">PCI DSS</span>
+              </div>
             </div>
           </div>
         </section>

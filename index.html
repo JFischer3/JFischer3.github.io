@@ -594,7 +594,7 @@
           <a href="#tools">Security Toolkit</a>
           <a href="#projects">Projects</a>
           <a href="#certifications">Certifications</a>
-          <a href="#audit-grc">IT Audit &amp; GRC Systems</a>
+          <a href="#frameworks">Frameworks</a>
           <a href="#contact">Contact</a>
         </nav>
       </aside>
@@ -756,7 +756,7 @@
                   rx="8"
                   fill="#3aa3ff"
                   data-series="scan"
-                  data-label="Scanning coverage — 40%"
+                  data-label="Scanning: Nmap, Nessus — 40%"
                 />
                 <rect
                   x="90"
@@ -766,7 +766,7 @@
                   rx="8"
                   fill="#12d6a1"
                   data-series="detect"
-                  data-label="Detection response — 28%"
+                  data-label="Detection: Splunk — 28%"
                 />
                 <rect
                   x="160"
@@ -776,7 +776,7 @@
                   rx="8"
                   fill="#ffd166"
                   data-series="assess"
-                  data-label="Risk assessment — 22%"
+                  data-label="Assessment: Kali Linux, Metasploit — 22%"
                 />
                 <rect
                   x="230"
@@ -786,7 +786,7 @@
                   rx="8"
                   fill="#5c7cfa"
                   data-series="report"
-                  data-label="Audit reporting — 10%"
+                  data-label="Reporting: MITRE ATT&amp;CK — 10%"
                 />
                 <text x="45" y="185" text-anchor="middle" fill="#94a3b8" font-size="10">Scan</text>
                 <text x="115" y="185" text-anchor="middle" fill="#94a3b8" font-size="10">Detect</text>
@@ -799,19 +799,19 @@
               <div class="chart-legend">
                 <div class="legend-item" data-legend="scan">
                   <span class="legend-swatch" style="background:#3aa3ff"></span>
-                  Scanning coverage — 40%
+                  Scanning: Nmap, Nessus — 40%
                 </div>
                 <div class="legend-item" data-legend="detect">
                   <span class="legend-swatch" style="background:#12d6a1"></span>
-                  Detection response — 28%
+                  Detection: Splunk — 28%
                 </div>
                 <div class="legend-item" data-legend="assess">
                   <span class="legend-swatch" style="background:#ffd166"></span>
-                  Risk assessment — 22%
+                  Assessment: Kali Linux, Metasploit — 22%
                 </div>
                 <div class="legend-item" data-legend="report">
                   <span class="legend-swatch" style="background:#5c7cfa"></span>
-                  Audit reporting — 10%
+                  Reporting: MITRE ATT&amp;CK — 10%
                 </div>
               </div>
             </div>
@@ -846,40 +846,41 @@
           </div>
         </section>
 
-        <section id="audit-grc" class="panel fade-in">
+        <section id="frameworks" class="panel fade-in">
           <div class="panel-header">
-            <h3>IT Audit &amp; GRC Systems</h3>
-            <span>Pre-implementation reviews &amp; compliance tooling</span>
+            <h3>Frameworks</h3>
+            <span>Audit, governance, and compliance coverage</span>
           </div>
           <div class="dashboard-row section-split">
             <div class="chart-card chart-interactive" data-chart="framework-coverage">
-              <strong>Framework Coverage</strong>
-              <svg viewBox="0 0 240 200" role="img" aria-label="Framework coverage pie chart">
+              <strong>Framework Coverage (Donut)</strong>
+              <svg viewBox="0 0 240 200" role="img" aria-label="Framework coverage donut chart">
                 <circle cx="120" cy="100" r="70" fill="#1b2f4a" />
                 <path
                   d="M120 100 L120 30 A70 70 0 0 1 186 140 Z"
                   fill="#3aa3ff"
                   data-series="sox"
-                  data-label="SOX / SOC readiness — 42%"
+                  data-label="Financial reporting (SOX 404, SOC 1, COSO) — 38%"
                 />
                 <path
                   d="M120 100 L186 140 A70 70 0 0 1 98 168 Z"
                   fill="#12d6a1"
                   data-series="iso"
-                  data-label="ISO / NIST alignment — 28%"
+                  data-label="Security management (ISO 27001, NIST CSF, NIST 800-53) — 32%"
                 />
                 <path
                   d="M120 100 L98 168 A70 70 0 0 1 56 132 Z"
                   fill="#ffd166"
                   data-series="privacy"
-                  data-label="Privacy &amp; data regs — 18%"
+                  data-label="Privacy &amp; data (GDPR, PCI DSS) — 18%"
                 />
                 <path
                   d="M120 100 L56 132 A70 70 0 0 1 120 30 Z"
                   fill="#5c7cfa"
                   data-series="governance"
-                  data-label="Governance controls — 12%"
+                  data-label="Governance &amp; oversight (COBIT 2019) — 12%"
                 />
+                <circle cx="120" cy="100" r="38" fill="#15253f" />
               </svg>
               <div class="chart-tooltip" data-default="Hover or focus a slice to see details." aria-live="polite">
                 Hover or focus a slice to see details.
@@ -887,31 +888,31 @@
               <div class="chart-legend">
                 <div class="legend-item" data-legend="sox">
                   <span class="legend-swatch" style="background:#3aa3ff"></span>
-                  SOX / SOC readiness — 42%
+                  Financial reporting — SOX 404, SOC 1, COSO (38%)
                 </div>
                 <div class="legend-item" data-legend="iso">
                   <span class="legend-swatch" style="background:#12d6a1"></span>
-                  ISO / NIST alignment — 28%
+                  Security management — ISO 27001, NIST CSF, NIST 800-53 (32%)
                 </div>
                 <div class="legend-item" data-legend="privacy">
                   <span class="legend-swatch" style="background:#ffd166"></span>
-                  Privacy &amp; data regs — 18%
+                  Privacy &amp; data — GDPR, PCI DSS (18%)
                 </div>
                 <div class="legend-item" data-legend="governance">
                   <span class="legend-swatch" style="background:#5c7cfa"></span>
-                  Governance controls — 12%
+                  Governance &amp; oversight — COBIT 2019 (12%)
                 </div>
               </div>
             </div>
             <div class="section-stack">
               <div class="mini-card-grid">
                 <div class="mini-card">
-                  <strong>11</strong>
+                  <strong>9</strong>
                   <span>Frameworks tracked</span>
                 </div>
                 <div class="mini-card">
                   <strong>4</strong>
-                  <span>Systems assessed</span>
+                  <span>Framework domains</span>
                 </div>
                 <div class="mini-card">
                   <strong>18</strong>
@@ -936,21 +937,16 @@
                   <div class="progress-bar"><span style="width: 64%"></span></div>
                 </div>
               </div>
-              <div class="pill-group" data-toggle-list="grc">
-                <span class="pill">Blackline</span>
-                <span class="pill">HighRadius</span>
-                <span class="pill">R2P</span>
-                <span class="pill">Workiva</span>
-                <span class="pill">Power BI</span>
+              <div class="pill-group" data-toggle-list="frameworks">
                 <span class="pill">SOX 404</span>
+                <span class="pill">SOC 1</span>
+                <span class="pill">COSO</span>
                 <span class="pill">ISO 27001</span>
                 <span class="pill">NIST CSF</span>
                 <span class="pill">NIST 800-53</span>
-                <span class="pill">COSO</span>
-                <span class="pill">COBIT 2019</span>
-                <span class="pill">SOC 1</span>
                 <span class="pill">GDPR</span>
                 <span class="pill">PCI DSS</span>
+                <span class="pill">COBIT 2019</span>
               </div>
             </div>
           </div>

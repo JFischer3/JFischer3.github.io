@@ -3,226 +3,272 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jordan Fischer | Cybersecurity Portfolio</title>
+    <title>Jordan Fischer | Cybersecurity Portfolio Dashboard</title>
     <style>
       :root {
-        color-scheme: light;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        --navy: #0f172a;
-        --slate: #475569;
-        --sky: #38bdf8;
-        --teal: #14b8a6;
-        --card-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+        color-scheme: dark;
+        font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+        line-height: 1.5;
+        --bg: #0b1220;
+        --surface: #101a2d;
+        --surface-2: #122036;
+        --panel: #15253f;
+        --panel-soft: #1b2f4a;
+        --accent: #3aa3ff;
+        --accent-2: #12d6a1;
+        --highlight: #ffd166;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --border: rgba(148, 163, 184, 0.2);
+        --shadow: 0 12px 30px rgba(4, 12, 24, 0.45);
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       body {
         margin: 0;
-        background: #f7f8fb;
-        color: var(--navy);
+        background: var(--bg);
+        color: var(--text);
       }
 
-      header {
-        background: var(--navy);
-        color: #ffffff;
-        padding: 3rem 1.5rem;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .dashboard {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        min-height: 100vh;
+      }
+
+      aside {
+        background: linear-gradient(180deg, #0c1626 0%, #0b1220 100%);
+        padding: 2rem 1.5rem;
+        border-right: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+      }
+
+      .brand {
+        display: grid;
+        gap: 0.35rem;
+        margin-bottom: 2rem;
+      }
+
+      .brand h1 {
+        font-size: 1.4rem;
+        margin: 0;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .nav-links {
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .nav-links a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.65rem 0.75rem;
+        border-radius: 10px;
+        color: var(--muted);
+        background: transparent;
+        transition: all 0.2s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: var(--text);
+        background: var(--panel);
+      }
+
+      .nav-links .active {
+        color: var(--text);
+        background: linear-gradient(135deg, rgba(58, 163, 255, 0.2), rgba(18, 214, 161, 0.2));
+        border: 1px solid rgba(58, 163, 255, 0.3);
+      }
+
+      main {
+        padding: 2rem 2.5rem 3rem;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .topbar h2 {
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      .topbar p {
+        margin: 0.35rem 0 0;
+        color: var(--muted);
+        max-width: 540px;
+      }
+
+      .topbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .action-pill {
+        padding: 0.5rem 0.9rem;
+        border-radius: 999px;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        color: var(--text);
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 1rem;
+      }
+
+      .kpi-card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.25rem;
+        box-shadow: var(--shadow);
         position: relative;
         overflow: hidden;
       }
 
-      header::after {
+      .kpi-card::after {
         content: "";
         position: absolute;
         inset: auto -20% -40% auto;
-        width: 420px;
-        height: 420px;
-        background: radial-gradient(circle, rgba(56, 189, 248, 0.35), transparent 70%);
-        transform: translate3d(0, 0, 0);
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, rgba(58, 163, 255, 0.25), transparent 70%);
       }
 
-      header h1 {
-        margin: 0;
-        font-size: 2.5rem;
+      .kpi-title {
+        color: var(--muted);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 0 0 0.4rem;
       }
 
-      header p {
-        margin: 0.75rem 0 0;
-        max-width: 700px;
-        font-size: 1.1rem;
-      }
-
-      nav {
-        margin-top: 2rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      nav a {
-        color: #e2e8f0;
-        text-decoration: none;
-        font-weight: 600;
-        position: relative;
-      }
-
-      nav a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -0.35rem;
-        width: 100%;
-        height: 2px;
-        background: var(--sky);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.25s ease;
-      }
-
-      nav a:focus-visible::after,
-      nav a:hover::after {
-        transform: scaleX(1);
-      }
-
-      main {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 2rem 1.5rem 4rem;
-      }
-
-      section {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 2rem;
-        margin: 1.5rem 0;
-        box-shadow: var(--card-shadow);
-      }
-
-      section h2 {
-        margin-top: 0;
+      .kpi-value {
         font-size: 1.6rem;
+        margin: 0;
       }
 
-      .section-title {
-        display: inline-flex;
+      .kpi-note {
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-top: 0.6rem;
+      }
+
+      .panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 1.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      .panel-header {
+        display: flex;
         align-items: center;
-        gap: 0.65rem;
-        position: relative;
-      }
-
-      .section-title::after {
-        content: "";
-        display: inline-block;
-        width: 42px;
-        height: 3px;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--sky), var(--teal));
-        transform-origin: left;
-      }
-
-      .js .section-title::after {
-        transform: scaleX(0);
-        transition: transform 0.6s ease;
-      }
-
-      .js .reveal.is-visible .section-title::after {
-        transform: scaleX(1);
-      }
-
-      ul {
-        padding-left: 1.25rem;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .js .reveal {
-        opacity: 0;
-        transform: translateY(16px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
-
-      .js .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .filter-panel {
-        display: grid;
+        justify-content: space-between;
         gap: 1rem;
-        margin: 1.5rem 0;
+        margin-bottom: 1.25rem;
       }
 
-      .filter-panel fieldset {
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
+      .panel-header h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .panel-header span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .chart-placeholder {
+        height: 220px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(58, 163, 255, 0.12), rgba(18, 214, 161, 0.08));
+        border: 1px dashed rgba(148, 163, 184, 0.4);
+        display: grid;
+        place-items: center;
+        color: var(--muted);
+        text-align: center;
         padding: 1rem;
       }
 
-      .filter-panel legend {
-        font-weight: 600;
-        color: var(--slate);
-      }
-
-      .filter-options {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem 1rem;
-        margin-top: 0.75rem;
-      }
-
-      .filter-options label {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        font-size: 0.95rem;
-      }
-
-      .skill-grid {
+      .dashboard-row {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 0.75rem 1.5rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
       }
 
-      .skill-chip {
-        padding: 0.65rem 0.9rem;
-        border-radius: 12px;
-        background: #f1f5f9;
-        border: 1px solid transparent;
-        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      }
-
-      .skill-chip:hover,
-      .skill-chip:focus-within {
-        transform: translateY(-3px);
-        border-color: #bae6fd;
-        box-shadow: 0 10px 18px rgba(15, 23, 42, 0.12);
-      }
-
-      .skill-chip.is-hidden {
-        display: none;
-      }
-
-      .project-grid {
+      .timeline {
         display: grid;
         gap: 1rem;
       }
 
-      .project-card {
-        border: 1px solid #e2e8f0;
+      .timeline-item {
         border-radius: 14px;
         padding: 1rem 1.25rem;
-        background: #ffffff;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        background: var(--panel-soft);
+        border: 1px solid var(--border);
       }
 
-      .project-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 24px rgba(15, 23, 42, 0.12);
+      .timeline-item.highlight {
+        border: 1px solid rgba(58, 163, 255, 0.45);
+        background: linear-gradient(135deg, rgba(58, 163, 255, 0.2), rgba(18, 214, 161, 0.18));
+      }
+
+      .pill-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .pill {
+        padding: 0.4rem 0.75rem;
+        border-radius: 999px;
+        background: rgba(58, 163, 255, 0.15);
+        border: 1px solid rgba(58, 163, 255, 0.3);
+        font-size: 0.85rem;
+      }
+
+      .project-card {
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        padding: 1rem 1.25rem;
+      }
+
+      .project-card details {
+        border-radius: 12px;
       }
 
       .project-card summary {
@@ -235,88 +281,21 @@
         display: none;
       }
 
-      .project-meta {
-        color: var(--slate);
-        font-size: 0.95rem;
-        margin: 0.4rem 0 0;
-      }
-
-      .project-details {
-        margin-top: 0.75rem;
-      }
-
-      .timeline {
+      .contact-grid {
         display: grid;
         gap: 1.25rem;
-        margin-top: 1.5rem;
-        position: relative;
-      }
-
-      .timeline::before {
-        content: "";
-        position: absolute;
-        left: 12px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: #e2e8f0;
-      }
-
-      .timeline-item {
-        position: relative;
-        padding-left: 2.5rem;
-      }
-
-      .timeline-item::before {
-        content: "";
-        position: absolute;
-        left: 4px;
-        top: 0.4rem;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: var(--teal);
-        box-shadow: 0 0 0 6px rgba(20, 184, 166, 0.2);
-      }
-
-      .timeline-item.highlight-card {
-        background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(20, 184, 166, 0.12));
-        border: 1px solid rgba(56, 189, 248, 0.35);
-        border-radius: 16px;
-        padding: 1.5rem 1.5rem 1.5rem 2.5rem;
-        box-shadow: 0 18px 28px rgba(15, 23, 42, 0.1);
-      }
-
-      .contact-card {
-        display: grid;
-        gap: 1.5rem;
-      }
-
-      .contact-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: center;
       }
 
       .cta-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 0.85rem 1.6rem;
-        border-radius: 999px;
-        background: linear-gradient(135deg, var(--sky), var(--teal));
-        color: #ffffff;
+        padding: 0.85rem 1.5rem;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #0b1220;
         font-weight: 700;
-        text-decoration: none;
-        box-shadow: 0 14px 24px rgba(15, 23, 42, 0.2);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      }
-
-      .cta-button:hover,
-      .cta-button:focus-visible {
-        transform: translateY(-2px);
-        box-shadow: 0 18px 30px rgba(15, 23, 42, 0.25);
+        border: none;
       }
 
       .contact-form {
@@ -326,28 +305,86 @@
 
       .contact-form label {
         display: grid;
-        gap: 0.45rem;
-        font-weight: 600;
+        gap: 0.4rem;
       }
 
       .contact-form input,
       .contact-form textarea {
         border-radius: 10px;
-        border: 1px solid #e2e8f0;
-        padding: 0.7rem 0.85rem;
+        border: 1px solid var(--border);
+        background: var(--surface-2);
+        color: var(--text);
+        padding: 0.65rem 0.8rem;
         font: inherit;
       }
 
-      .contact-note {
-        margin: 0;
-        color: var(--slate);
-        font-size: 0.95rem;
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        padding: 0.35rem 0.7rem;
+        border-radius: 8px;
+        background: rgba(255, 209, 102, 0.2);
+        color: var(--highlight);
+        font-size: 0.8rem;
+        border: 1px solid rgba(255, 209, 102, 0.35);
+      }
+
+      .toggle-group {
+        display: inline-flex;
+        gap: 0.5rem;
+        background: var(--panel);
+        border-radius: 999px;
+        padding: 0.3rem;
+        border: 1px solid var(--border);
+      }
+
+      .toggle-group button {
+        background: transparent;
+        border: none;
+        color: var(--muted);
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .toggle-group button.active {
+        background: rgba(58, 163, 255, 0.2);
+        color: var(--text);
+      }
+
+      .js .fade-in {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .js .fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
 
       footer {
         text-align: center;
-        padding: 2rem 1rem 3rem;
-        color: var(--slate);
+        color: var(--muted);
+        margin-top: 2.5rem;
+      }
+
+      @media (max-width: 960px) {
+        .dashboard {
+          grid-template-columns: 1fr;
+        }
+
+        aside {
+          position: relative;
+          height: auto;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -363,245 +400,251 @@
     </style>
   </head>
   <body>
-    <header class="reveal">
-      <h1>Jordan Fischer</h1>
-      <p>
-        Aspiring cybersecurity professional building a portfolio focused on governance,
-        risk, and compliance.
-      </p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#cyber-tools">Cyber Tools</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      <section id="hero" class="reveal">
-        <h2 class="section-title">Hero</h2>
-        <p>
-          {PLACEHOLDER: confirmed professional tagline or summary statement}
-        </p>
-      </section>
-
-      <section id="about" class="reveal">
-        <h2 class="section-title">About Me</h2>
-        <p>
-          {PLACEHOLDER: confirmed personal summary, focus areas, or mission statement}
-        </p>
-        <p>
-          Education: Correlation One Cybersecurity 1.0 — Honors Certificate.
-        </p>
-      </section>
-
-      <section id="experience" class="reveal">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-          <article class="timeline-item highlight-card">
-            <h3>Kenvue — IT SOX Compliance Analyst (Mar 2024 – Dec 2024)</h3>
-            <p>
-              Assisted with Kenvue’s spin-off from Johnson &amp; Johnson while supporting
-              SOX compliance activities.
-            </p>
-            <ul>
-              <li>{PLACEHOLDER: control testing detail}</li>
-              <li>{PLACEHOLDER: documentation or evidence collection detail}</li>
-              <li>{PLACEHOLDER: stakeholder coordination detail}</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <h3>{PLACEHOLDER: confirmed role title and organization}</h3>
-            <p>{PLACEHOLDER: confirmed start date – end date}</p>
-            <p>
-              {PLACEHOLDER: confirmed one-line role summary}
-            </p>
-            <ul>
-              <li>{PLACEHOLDER: confirmed responsibility or impact 1}</li>
-              <li>{PLACEHOLDER: confirmed responsibility or impact 2}</li>
-            </ul>
-          </article>
+    <div class="dashboard">
+      <aside>
+        <div class="brand">
+          <h1>Jordan Fischer</h1>
+          <span>Cybersecurity Portfolio Dashboard</span>
         </div>
-      </section>
+        <nav class="nav-links">
+          <a class="active" href="#overview">Overview</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#tools">Cyber Tools</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </aside>
 
-      <section id="skills" class="reveal">
-        <h2 class="section-title">Skills</h2>
-        <div class="filter-panel">
-          <fieldset>
-            <legend>Filter skill categories</legend>
-            <div class="filter-options" data-filter-group="skills">
-              <label>
-                <input type="checkbox" name="skill-filter" value="governance" checked />
-                Governance
-              </label>
-              <label>
-                <input type="checkbox" name="skill-filter" value="risk" checked />
-                Risk
-              </label>
-              <label>
-                <input type="checkbox" name="skill-filter" value="compliance" checked />
-                Compliance
-              </label>
-              <label>
-                <input type="checkbox" name="skill-filter" value="audit" checked />
-                Audit
-              </label>
+      <main>
+        <section id="overview" class="grid fade-in">
+          <div class="topbar">
+            <div>
+              <h2>Executive Dashboard</h2>
+              <p>
+                Dynamic portfolio overview modeled after Power BI layout patterns.
+                Verified facts are shown; placeholders indicate items awaiting confirmation.
+              </p>
             </div>
-            <p>
-              {PLACEHOLDER: brief description of skill focus areas}
-            </p>
-          </fieldset>
-        </div>
-        <ul class="skill-grid" data-filter-list="skills">
-          <li class="skill-chip" data-category="governance">
-            {PLACEHOLDER: confirmed skill category 1}
-          </li>
-          <li class="skill-chip" data-category="risk">
-            {PLACEHOLDER: confirmed skill category 2}
-          </li>
-          <li class="skill-chip" data-category="compliance">
-            {PLACEHOLDER: confirmed skill category 3}
-          </li>
-          <li class="skill-chip" data-category="audit">
-            {PLACEHOLDER: confirmed skill category 4}
-          </li>
-        </ul>
-      </section>
+            <div class="topbar-actions">
+              <span class="action-pill">Last updated: {PLACEHOLDER: date}</span>
+              <span class="action-pill">Status: Open to opportunities</span>
+            </div>
+          </div>
 
-      <section id="cyber-tools" class="reveal">
-        <h2 class="section-title">Cyber Tools</h2>
-        <div class="filter-panel">
-          <fieldset>
-            <legend>Filter tool categories</legend>
-            <div class="filter-options" data-filter-group="tools">
-              <label>
-                <input type="checkbox" name="tool-filter" value="grc" checked />
-                GRC
-              </label>
-              <label>
-                <input type="checkbox" name="tool-filter" value="cloud" checked />
-                Cloud
-              </label>
-              <label>
-                <input type="checkbox" name="tool-filter" value="analysis" checked />
-                Analysis
-              </label>
-            </div>
-            <p>
-              {PLACEHOLDER: brief description of tool experience}
-            </p>
-          </fieldset>
-        </div>
-        <ul class="skill-grid" data-filter-list="tools">
-          <li class="skill-chip" data-category="grc">
-            {PLACEHOLDER: confirmed tool or platform 1}
-          </li>
-          <li class="skill-chip" data-category="cloud">
-            {PLACEHOLDER: confirmed tool or platform 2}
-          </li>
-          <li class="skill-chip" data-category="analysis">
-            {PLACEHOLDER: confirmed tool or platform 3}
-          </li>
-          <li class="skill-chip" data-category="analysis">
-            {PLACEHOLDER: confirmed tool or platform 4}
-          </li>
-        </ul>
-      </section>
+          <div class="kpi-grid">
+            <article class="kpi-card">
+              <p class="kpi-title">Current Focus</p>
+              <p class="kpi-value">GRC &amp; SOX Compliance</p>
+              <p class="kpi-note">{PLACEHOLDER: confirmed focus statement}</p>
+            </article>
+            <article class="kpi-card">
+              <p class="kpi-title">Certification</p>
+              <p class="kpi-value">CompTIA Security+ (SY0-601)</p>
+              <p class="kpi-note">Active credential</p>
+            </article>
+            <article class="kpi-card">
+              <p class="kpi-title">Latest Role</p>
+              <p class="kpi-value">IT SOX Compliance Analyst</p>
+              <p class="kpi-note">Kenvue · Mar 2024 – Dec 2024</p>
+            </article>
+            <article class="kpi-card">
+              <p class="kpi-title">Program</p>
+              <p class="kpi-value">Correlation One Cybersecurity 1.0</p>
+              <p class="kpi-note">Honors Certificate</p>
+            </article>
+          </div>
+        </section>
 
-      <section id="projects" class="reveal">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-grid">
-          <details class="project-card">
-            <summary>{PLACEHOLDER: confirmed project title}</summary>
-            <p class="project-meta">{PLACEHOLDER: confirmed project timeline}</p>
-            <div class="project-details">
-              <p>{PLACEHOLDER: confirmed project description}</p>
-              <p>{PLACEHOLDER: confirmed outcome or impact}</p>
-              <p>{PLACEHOLDER: confirmed tools or frameworks used}</p>
-            </div>
-          </details>
-          <details class="project-card">
-            <summary>{PLACEHOLDER: confirmed project title}</summary>
-            <p class="project-meta">{PLACEHOLDER: confirmed project timeline}</p>
-            <div class="project-details">
-              <p>{PLACEHOLDER: confirmed project description}</p>
-              <p>{PLACEHOLDER: confirmed outcome or impact}</p>
-              <p>{PLACEHOLDER: confirmed tools or frameworks used}</p>
-            </div>
-          </details>
-          <details class="project-card">
-            <summary>{PLACEHOLDER: confirmed project title}</summary>
-            <p class="project-meta">{PLACEHOLDER: confirmed project timeline}</p>
-            <div class="project-details">
-              <p>{PLACEHOLDER: confirmed project description}</p>
-              <p>{PLACEHOLDER: confirmed outcome or impact}</p>
-              <p>{PLACEHOLDER: confirmed tools or frameworks used}</p>
-            </div>
-          </details>
-        </div>
-      </section>
+        <section id="about" class="panel fade-in">
+          <div class="panel-header">
+            <h3>About Me</h3>
+            <span>Profile summary</span>
+          </div>
+          <p>{PLACEHOLDER: confirmed personal summary, focus areas, or mission statement}</p>
+          <div class="tag-row">
+            <span class="tag">GRC</span>
+            <span class="tag">SOX Compliance</span>
+            <span class="tag">Risk &amp; Controls</span>
+            <span class="tag">{PLACEHOLDER: confirmed focus tag}</span>
+          </div>
+        </section>
 
-      <section id="certifications" class="reveal">
-        <h2 class="section-title">Certifications</h2>
-        <ul>
-          <li>CompTIA Security+ (SY0-601)</li>
-          <li>{PLACEHOLDER: confirmed certification 2}</li>
-        </ul>
-      </section>
+        <section id="experience" class="panel fade-in">
+          <div class="panel-header">
+            <h3>Experience Timeline</h3>
+            <span>Highlighted engagements</span>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item highlight">
+              <h4>Kenvue — IT SOX Compliance Analyst (Mar 2024 – Dec 2024)</h4>
+              <p>
+                Assisted with Kenvue’s spin-off from Johnson &amp; Johnson while supporting
+                SOX compliance activities.
+              </p>
+              <ul>
+                <li>{PLACEHOLDER: control testing detail}</li>
+                <li>{PLACEHOLDER: documentation or evidence collection detail}</li>
+                <li>{PLACEHOLDER: stakeholder coordination detail}</li>
+              </ul>
+            </article>
+            <article class="timeline-item">
+              <h4>{PLACEHOLDER: confirmed role title and organization}</h4>
+              <p>{PLACEHOLDER: confirmed start date – end date}</p>
+              <p>{PLACEHOLDER: confirmed one-line role summary}</p>
+              <ul>
+                <li>{PLACEHOLDER: confirmed responsibility or impact 1}</li>
+                <li>{PLACEHOLDER: confirmed responsibility or impact 2}</li>
+              </ul>
+            </article>
+          </div>
+        </section>
 
-      <section id="contact" class="reveal">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-card">
-          <p>Let’s connect about governance, risk, and compliance opportunities.</p>
-          <div class="contact-actions">
-            <a class="cta-button" href="mailto:{PLACEHOLDER: email address}">
-              Start a conversation
-            </a>
-            <p class="contact-note">Primary CTA — confirm destination before launch.</p>
+        <section id="skills" class="panel fade-in">
+          <div class="panel-header">
+            <h3>Skills &amp; Competencies</h3>
+            <span>Interactive skill lens</span>
+          </div>
+          <div class="toggle-group" data-toggle-group="skills">
+            <button class="active" type="button" data-toggle="all">All</button>
+            <button type="button" data-toggle="governance">Governance</button>
+            <button type="button" data-toggle="risk">Risk</button>
+            <button type="button" data-toggle="compliance">Compliance</button>
+            <button type="button" data-toggle="audit">Audit</button>
+          </div>
+          <p>{PLACEHOLDER: brief description of skill focus areas}</p>
+          <div class="pill-group" data-toggle-list="skills">
+            <span class="pill" data-category="governance">{PLACEHOLDER: confirmed skill 1}</span>
+            <span class="pill" data-category="risk">{PLACEHOLDER: confirmed skill 2}</span>
+            <span class="pill" data-category="compliance">{PLACEHOLDER: confirmed skill 3}</span>
+            <span class="pill" data-category="audit">{PLACEHOLDER: confirmed skill 4}</span>
+          </div>
+        </section>
+
+        <section id="tools" class="panel fade-in">
+          <div class="panel-header">
+            <h3>Cyber Tools</h3>
+            <span>Tooling footprint</span>
+          </div>
+          <div class="dashboard-row">
+            <div>
+              <div class="chart-placeholder">
+                Tool Mix Visualization<br />{PLACEHOLDER: confirmed tool distribution}
+              </div>
+            </div>
+            <div>
+              <p>{PLACEHOLDER: brief description of tool experience}</p>
+              <div class="pill-group" data-toggle-list="tools">
+                <span class="pill" data-category="grc">{PLACEHOLDER: confirmed tool 1}</span>
+                <span class="pill" data-category="cloud">{PLACEHOLDER: confirmed tool 2}</span>
+                <span class="pill" data-category="analysis">{PLACEHOLDER: confirmed tool 3}</span>
+                <span class="pill" data-category="analysis">{PLACEHOLDER: confirmed tool 4}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="panel fade-in">
+          <div class="panel-header">
+            <h3>Projects</h3>
+            <span>Portfolio initiatives</span>
+          </div>
+          <div class="dashboard-row">
+            <article class="project-card">
+              <details>
+                <summary>{PLACEHOLDER: confirmed project title}</summary>
+                <p>{PLACEHOLDER: confirmed project timeline}</p>
+                <p>{PLACEHOLDER: confirmed project description}</p>
+                <p>{PLACEHOLDER: confirmed outcome or impact}</p>
+                <p>{PLACEHOLDER: confirmed tools or frameworks used}</p>
+              </details>
+            </article>
+            <article class="project-card">
+              <details>
+                <summary>{PLACEHOLDER: confirmed project title}</summary>
+                <p>{PLACEHOLDER: confirmed project timeline}</p>
+                <p>{PLACEHOLDER: confirmed project description}</p>
+                <p>{PLACEHOLDER: confirmed outcome or impact}</p>
+                <p>{PLACEHOLDER: confirmed tools or frameworks used}</p>
+              </details>
+            </article>
+            <article class="project-card">
+              <details>
+                <summary>{PLACEHOLDER: confirmed project title}</summary>
+                <p>{PLACEHOLDER: confirmed project timeline}</p>
+                <p>{PLACEHOLDER: confirmed project description}</p>
+                <p>{PLACEHOLDER: confirmed outcome or impact}</p>
+                <p>{PLACEHOLDER: confirmed tools or frameworks used}</p>
+              </details>
+            </article>
+          </div>
+        </section>
+
+        <section id="certifications" class="panel fade-in">
+          <div class="panel-header">
+            <h3>Certifications</h3>
+            <span>Credentials</span>
           </div>
           <ul>
-            <li>Email: {PLACEHOLDER: email address}</li>
-            <li>LinkedIn: {PLACEHOLDER: LinkedIn profile}</li>
-            <li>GitHub: {PLACEHOLDER: GitHub profile}</li>
+            <li>CompTIA Security+ (SY0-601)</li>
+            <li>Correlation One Cybersecurity 1.0 — Honors Certificate</li>
+            <li>{PLACEHOLDER: confirmed certification 2}</li>
           </ul>
-          <form
-            class="contact-form"
-            action="mailto:{PLACEHOLDER: email address}"
-            method="post"
-            enctype="text/plain"
-          >
-            <p class="contact-note">
-              Form submission is wired to a mailto placeholder and needs confirmation.
-            </p>
-            <label>
-              Your name
-              <input type="text" name="name" placeholder="{PLACEHOLDER: name}" />
-            </label>
-            <label>
-              Your email
-              <input type="email" name="email" placeholder="{PLACEHOLDER: email address}" />
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows="4" placeholder="{PLACEHOLDER: message}"></textarea>
-            </label>
-            <button class="cta-button" type="submit">Send message</button>
-          </form>
-        </div>
-      </section>
-    </main>
+        </section>
 
-    <footer>
-      <p>© 2024 Jordan Fischer. All rights reserved.</p>
-    </footer>
+        <section id="contact" class="panel fade-in">
+          <div class="panel-header">
+            <h3>Contact Me</h3>
+            <span>Let’s connect</span>
+          </div>
+          <div class="contact-grid">
+            <p>Reach out for governance, risk, and compliance opportunities.</p>
+            <div>
+              <a class="cta-button" href="mailto:{PLACEHOLDER: email address}">
+                Start a conversation
+              </a>
+              <p class="kpi-note">Primary CTA — confirm destination before launch.</p>
+            </div>
+            <ul>
+              <li>Email: {PLACEHOLDER: email address}</li>
+              <li>LinkedIn: {PLACEHOLDER: LinkedIn profile}</li>
+              <li>GitHub: {PLACEHOLDER: GitHub profile}</li>
+            </ul>
+            <form
+              class="contact-form"
+              action="mailto:{PLACEHOLDER: email address}"
+              method="post"
+              enctype="text/plain"
+            >
+              <label>
+                Your name
+                <input type="text" name="name" placeholder="{PLACEHOLDER: name}" />
+              </label>
+              <label>
+                Your email
+                <input type="email" name="email" placeholder="{PLACEHOLDER: email address}" />
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="4" placeholder="{PLACEHOLDER: message}"></textarea>
+              </label>
+              <button class="cta-button" type="submit">Send message</button>
+            </form>
+          </div>
+        </section>
+
+        <footer>
+          <p>© 2024 Jordan Fischer. All rights reserved.</p>
+        </footer>
+      </main>
+    </div>
 
     <script>
       document.documentElement.classList.add("js");
 
-      const revealElements = document.querySelectorAll(".reveal");
+      const revealElements = document.querySelectorAll(".fade-in");
 
       if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver(
@@ -612,7 +655,7 @@
               }
             });
           },
-          { threshold: 0.15 }
+          { threshold: 0.2 }
         );
 
         revealElements.forEach((element) => observer.observe(element));
@@ -620,34 +663,33 @@
         revealElements.forEach((element) => element.classList.add("is-visible"));
       }
 
-      const bindFilters = (groupName) => {
-        const group = document.querySelector(`[data-filter-group="${groupName}"]`);
-        const list = document.querySelector(`[data-filter-list="${groupName}"]`);
+      const toggleGroups = document.querySelectorAll("[data-toggle-group]");
 
-        if (!group || !list) {
-          return;
-        }
+      toggleGroups.forEach((group) => {
+        const groupName = group.getAttribute("data-toggle-group");
+        const items = document.querySelectorAll(`[data-toggle-list="${groupName}"] [data-category]`);
 
-        const updateFilters = () => {
-          const checkedValues = Array.from(
-            group.querySelectorAll("input[type='checkbox']")
-          )
-            .filter((input) => input.checked)
-            .map((input) => input.value);
+        const updateActive = (filter) => {
+          group.querySelectorAll("button").forEach((button) => {
+            button.classList.toggle("active", button.dataset.toggle === filter);
+          });
 
-          list.querySelectorAll("[data-category]").forEach((item) => {
+          items.forEach((item) => {
             const category = item.getAttribute("data-category");
-            const isVisible = checkedValues.length === 0 || checkedValues.includes(category);
-            item.classList.toggle("is-hidden", !isVisible);
+            const isVisible = filter === "all" || category === filter;
+            item.style.display = isVisible ? "inline-flex" : "none";
           });
         };
 
-        group.addEventListener("change", updateFilters);
-        updateFilters();
-      };
+        group.addEventListener("click", (event) => {
+          const target = event.target;
+          if (target.matches("button[data-toggle]")) {
+            updateActive(target.dataset.toggle);
+          }
+        });
 
-      bindFilters("skills");
-      bindFilters("tools");
+        updateActive("all");
+      });
     </script>
   </body>
 </html>

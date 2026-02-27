@@ -16,18 +16,6 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Profile */}
-           <div className="flex items-center gap-4 mb-6">
-           <div className="relative">
-           <div className="absolute -inset-1 rounded-full bg-enterprise-accent/30 blur-md" />
-            <img
-                src={profileImg}
-                alt="Jordan Fischer"
-                className="relative w-14 h-14 rounded-full object-cover border border-white/10 
-              brightness-95 contrast-95 saturate-90"
-                loading="eager"
-                />
-            </div>
 
             <div className="leading-tight">
             <div className="text-white font-bold">Jordan Fischer</div>
@@ -65,31 +53,36 @@ export default function Home() {
             className="hidden md:flex justify-center"
           >
             <div className="relative">
-              <div className="absolute -inset-4 bg-enterprise-accent/20 rounded-full blur-3xl animate-pulse" />
-              <div className="relative bg-enterprise-surface border border-slate-700 p-8 rounded-2xl shadow-2xl w-full max-w-md">
-                <div className="flex flex-col space-y-6">
-                  <div className="h-2 w-32 bg-slate-700 rounded" />
-                  <div className="h-2 w-48 bg-enterprise-accent/40 rounded" />
-                  <div className="grid grid-cols-3 gap-3 py-4">
-                    <div className="h-20 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center">
-                      <CheckCircle className="text-green-500 w-8 h-8" />
-                    </div>
-                    <div className="h-20 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center">
-                      <Lock className="text-enterprise-warning w-8 h-8" />
-                    </div>
-                    <div className="h-20 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center">
-                      <FileText className="text-enterprise-accent w-8 h-8" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="h-2 w-full bg-slate-700 rounded" />
-                    <div className="h-2 w-3/4 bg-slate-700 rounded" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+  {/* Glow */}
+  <div className="absolute -inset-6 bg-enterprise-accent/20 rounded-full blur-3xl" />
+
+  {/* Profile Card */}
+  <div className="relative bg-enterprise-surface border border-slate-700 p-6 rounded-2xl shadow-2xl w-[320px]">
+    <div className="flex flex-col items-center text-center space-y-4">
+      <img
+        src={profileImg}
+        alt="Jordan Fischer"
+        className="w-40 h-40 rounded-full object-cover border border-white/10
+                   brightness-95 contrast-95 saturate-90"
+      />
+
+      <div>
+        <div className="text-xl font-bold text-white">Jordan Fischer</div>
+        <div className="text-slate-400 text-sm">IT Compliance • GRC</div>
+        <div className="text-slate-500 text-xs mt-1">Columbia, PA</div>
+      </div>
+
+      <div className="flex gap-3 pt-2">
+        <div className="px-3 py-1 rounded-full bg-slate-800 border border-white/5 text-xs font-semibold">
+          SOX ITGC
         </div>
+        <div className="px-3 py-1 rounded-full bg-slate-800 border border-white/5 text-xs font-semibold">
+          NIST CSF
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* Credibility Strip */}

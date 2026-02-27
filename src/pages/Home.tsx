@@ -69,7 +69,7 @@ export default function Home() {
 
             <div>
               <div className="text-xl font-bold text-white">Jordan Fischer</div>
-              <div className="text-slate-400 text-sm">IT Compliance • GRC</div>
+              <div className="text-slate-400 text-sm">WGU Student • IT Compliance Analyst</div>
               <div className="text-slate-500 text-xs mt-1">Columbia, PA</div>
             </div>
 

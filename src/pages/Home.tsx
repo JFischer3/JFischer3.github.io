@@ -27,11 +27,12 @@ export default function Home() {
       </h1>
 
       <p className="text-lg text-slate-400 mb-10 max-w-xl leading-relaxed">
-        IT Compliance Analyst specializing in control design, audit readiness, and risk management. Proficient in{" "}
-        <span className="text-slate-100 font-semibold">SOX ITGC</span> and{" "}
-        <span className="text-slate-100 font-semibold">NIST CSF</span>, and currently pursuing a{" "}
-        <span className="text-slate-100 font-semibold">B.S. in Cybersecurity and Information Assurance at WGU</span>.
-      </p>
+  Welcome. I’m <span className="text-slate-100 font-semibold">Jordan Fischer</span>, an IT Compliance Analyst focused on
+  strengthening technical controls and keeping organizations audit-ready. Here you’ll find my work across{" "}
+  <span className="text-slate-100 font-semibold">SOX ITGC</span> and{" "}
+  <span className="text-slate-100 font-semibold">NIST CSF</span>, along with coursework projects from my{" "}
+  <span className="text-slate-100 font-semibold">B.S. in Cybersecurity and Information Assurance at WGU</span>.
+</p>
 
       <div className="flex flex-col sm:flex-row gap-4">
         <Link

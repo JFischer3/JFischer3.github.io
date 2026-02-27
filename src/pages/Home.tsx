@@ -17,11 +17,6 @@ export default function Home() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="leading-tight mb-6">
-        <div className="text-white font-bold">Jordan Fischer</div>
-        <div className="text-slate-400 text-sm">Columbia, PA</div>
-      </div>
-
       <div className="inline-block px-3 py-1 mb-6 rounded-full bg-enterprise-accent/10 border border-enterprise-accent/30 text-enterprise-accent text-xs font-bold uppercase tracking-wider font-mono">
         Secure • Compliant • Resilient
       </div>

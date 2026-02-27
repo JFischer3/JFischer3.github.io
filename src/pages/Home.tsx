@@ -6,84 +6,92 @@ import profileImg from '../assets/Profile.png';
 export default function Home() {
   return (
     <div className="space-y-24 pb-24">
-      {/* Hero Section */}
-      <section className="min-h-[80vh] flex items-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-enterprise-accent/5 to-transparent pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+{/* Hero Section */}
+<section className="min-h-[80vh] flex items-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
+  <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-enterprise-accent/5 to-transparent pointer-events-none" />
 
-            <div className="leading-tight">
-            <div className="text-white font-bold">Jordan Fischer</div>
-            <div className="text-slate-400 text-sm">Columbia, PA</div>
-            </div>
-            </div>
-
-            <div className="inline-block px-3 py-1 mb-6 rounded-full bg-enterprise-accent/10 border border-enterprise-accent/30 text-enterprise-accent text-xs font-bold uppercase tracking-wider font-mono">
-              Secure • Compliant • Resilient
-            </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white">
-              IT Compliance & <br />
-              <span className="text-enterprise-accent">GRC Analyst</span>
-            </h1>
-            <p className="text-lg text-slate-400 mb-10 max-w-xl leading-relaxed">
-              IT Compliance Analyst specializing in control design, audit readiness, and risk management. Proficient in <span className="text-slate-100 font-semibold">SOX ITGC</span> and <span className="text-slate-100 font-semibold">NIST CSF</span>, and currently pursuing a <span className="text-slate-100 font-semibold">B.S. in Cybersecurity and Information Assurance at WGU</span>.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/projects" 
-                className="px-8 py-4 bg-enterprise-accent hover:bg-blue-600 text-white rounded-lg font-bold text-center transition-all shadow-lg shadow-blue-500/20"
-              >
-                View Projects
-              </Link>
-              <button className="px-8 py-4 border border-slate-700 hover:border-enterprise-accent text-white rounded-lg font-bold text-center transition-all flex items-center justify-center gap-2">
-                <Download className="w-4 h-4" /> Download Resume
-              </button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="hidden md:flex justify-center"
-          >
-            <div className="relative">
-  {/* Glow */}
-  <div className="absolute -inset-6 bg-enterprise-accent/20 rounded-full blur-3xl" />
-
-  {/* Profile Card */}
-  <div className="relative bg-enterprise-surface border border-slate-700 p-6 rounded-2xl shadow-2xl w-[320px]">
-    <div className="flex flex-col items-center text-center space-y-4">
-      <img
-        src={profileImg}
-        alt="Jordan Fischer"
-        className="w-40 h-40 rounded-full object-cover border border-white/10
-                   brightness-95 contrast-95 saturate-90"
-      />
-
-      <div>
-        <div className="text-xl font-bold text-white">Jordan Fischer</div>
-        <div className="text-slate-400 text-sm">IT Compliance • GRC</div>
-        <div className="text-slate-500 text-xs mt-1">Columbia, PA</div>
+  <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+    {/* Left column */}
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="leading-tight mb-6">
+        <div className="text-white font-bold">Jordan Fischer</div>
+        <div className="text-slate-400 text-sm">Columbia, PA</div>
       </div>
 
-      <div className="flex gap-3 pt-2">
-        <div className="px-3 py-1 rounded-full bg-slate-800 border border-white/5 text-xs font-semibold">
-          SOX ITGC
-        </div>
-        <div className="px-3 py-1 rounded-full bg-slate-800 border border-white/5 text-xs font-semibold">
-          NIST CSF
+      <div className="inline-block px-3 py-1 mb-6 rounded-full bg-enterprise-accent/10 border border-enterprise-accent/30 text-enterprise-accent text-xs font-bold uppercase tracking-wider font-mono">
+        Secure • Compliant • Resilient
+      </div>
+
+      <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white">
+        IT Compliance & <br />
+        <span className="text-enterprise-accent">GRC Analyst</span>
+      </h1>
+
+      <p className="text-lg text-slate-400 mb-10 max-w-xl leading-relaxed">
+        IT Compliance Analyst specializing in control design, audit readiness, and risk management. Proficient in{" "}
+        <span className="text-slate-100 font-semibold">SOX ITGC</span> and{" "}
+        <span className="text-slate-100 font-semibold">NIST CSF</span>, and currently pursuing a{" "}
+        <span className="text-slate-100 font-semibold">B.S. in Cybersecurity and Information Assurance at WGU</span>.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Link
+          to="/projects"
+          className="px-8 py-4 bg-enterprise-accent hover:bg-blue-600 text-white rounded-lg font-bold text-center transition-all shadow-lg shadow-blue-500/20"
+        >
+          View Projects
+        </Link>
+
+        <button className="px-8 py-4 border border-slate-700 hover:border-enterprise-accent text-white rounded-lg font-bold text-center transition-all flex items-center justify-center gap-2">
+          <Download className="w-4 h-4" /> Download Resume
+        </button>
+      </div>
+    </motion.div>
+
+    {/* Right column */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+      className="hidden md:flex justify-center"
+    >
+      <div className="relative">
+        {/* Glow */}
+        <div className="absolute -inset-6 bg-enterprise-accent/20 rounded-full blur-3xl" />
+
+        {/* Profile Card */}
+        <div className="relative bg-enterprise-surface border border-slate-700 p-6 rounded-2xl shadow-2xl w-[320px]">
+          <div className="flex flex-col items-center text-center space-y-4">
+            <img
+              src={profileImg}
+              alt="Jordan Fischer"
+              className="w-40 h-40 rounded-full object-cover border border-white/10 brightness-95 contrast-95 saturate-90"
+            />
+
+            <div>
+              <div className="text-xl font-bold text-white">Jordan Fischer</div>
+              <div className="text-slate-400 text-sm">IT Compliance • GRC</div>
+              <div className="text-slate-500 text-xs mt-1">Columbia, PA</div>
+            </div>
+
+            <div className="flex gap-3 pt-2">
+              <div className="px-3 py-1 rounded-full bg-slate-800 border border-white/5 text-xs font-semibold">
+                SOX ITGC
+              </div>
+              <div className="px-3 py-1 rounded-full bg-slate-800 border border-white/5 text-xs font-semibold">
+                NIST CSF
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   </div>
-</div>
-      </section>
+</section>
 
       {/* Credibility Strip */}
       <section className="py-12 bg-enterprise-surface/50 border-y border-white/5">

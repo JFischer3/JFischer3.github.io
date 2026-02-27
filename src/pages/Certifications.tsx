@@ -14,7 +14,7 @@ import { useMemo, useState } from "react";
 // Adjust filenames to match what you actually put in src/assets/certs/
 import securityPlusPdf from "../assets/certs/securityplus.pdf";
 import googleCyberPdf from "../assets/certs/google-cybersecurity.pdf";
-import correlationOneImg from "../assets/certs/correlation-one.png";
+import correlationOneImg from "../assets/certs/correlation-one.jpg";
 import forageDatPdf from "../assets/certs/forage-dat.pdf";
 import forageCscPdf from "../assets/certs/forage-csc.pdf";
 

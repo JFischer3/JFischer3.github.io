@@ -47,7 +47,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                 </Link>
               ))}
               <a 
-                href="mailto:contact@example.com"
+                href="mailto:jordanfischer50@gmail.com"
                 className="bg-enterprise-accent text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20"
               >
                 Contact Me

@@ -22,15 +22,15 @@ export default function Home() {
       </div>
 
       <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white">
-        IT Compliance & <br />
-        <span className="text-enterprise-accent">GRC Analyst</span>
-      </h1>
+  IT Compliance Analyst <br />
+  <span className="text-enterprise-accent">&amp; WGU Student</span>
+</h1>
 
-      <p className="text-lg text-slate-400 mb-10 max-w-xl leading-relaxed">
-  Welcome. I’m <span className="text-slate-100 font-semibold">Jordan Fischer</span>, an IT Compliance Analyst focused on
-  strengthening technical controls and keeping organizations audit-ready. Here you’ll find my work across{" "}
+     <p className="text-lg text-slate-400 mb-10 max-w-xl leading-relaxed">
+  I’m <span className="text-slate-100 font-semibold">Jordan Fischer</span>, an IT Compliance Analyst focused on control
+  design, audit readiness, and risk management. This portfolio reflects my experience with{" "}
   <span className="text-slate-100 font-semibold">SOX ITGC</span> and{" "}
-  <span className="text-slate-100 font-semibold">NIST CSF</span>, along with coursework projects from my{" "}
+  <span className="text-slate-100 font-semibold">NIST CSF</span>, and documents my professional growth as I begin my{" "}
   <span className="text-slate-100 font-semibold">B.S. in Cybersecurity and Information Assurance at WGU</span>.
 </p>
 

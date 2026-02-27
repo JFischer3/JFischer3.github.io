@@ -23,7 +23,8 @@ export default function Home() {
             <img
                 src={profileImg}
                 alt="Jordan Fischer"
-                className="relative w-16 h-16 rounded-full object-cover border border-white/10"
+                className="relative w-14 h-14 rounded-full object-cover border border-white/10 
+              brightness-95 contrast-95 saturate-90"
                 loading="eager"
                 />
             </div>

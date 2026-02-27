@@ -80,7 +80,7 @@ export default function Home() {
   </div>
 </section>
 
-  {/* Credibility Banner */}
+ {/* Credibility Banner */}
 <section className="py-16 border-y border-white/5">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid md:grid-cols-3 gap-12">
@@ -91,17 +91,17 @@ export default function Home() {
           My Approach
         </h3>
         <ul className="space-y-3 text-slate-300">
-          <li className="relative pl-5">
-            <span className="absolute left-0 top-2 text-slate-400">•</span>
-            Evaluate ITGC design and operating effectiveness
+          <li className="flex items-start gap-3">
+            <span className="mt-1 text-slate-400">•</span>
+            <span>Evaluate ITGC design and operating effectiveness</span>
           </li>
-          <li className="relative pl-5">
-            <span className="absolute left-0 top-2 text-slate-400">•</span>
-            Support audit readiness through clarity and consistency
+          <li className="flex items-start gap-3">
+            <span className="mt-1 text-slate-400">•</span>
+            <span>Support audit readiness through clarity and consistency</span>
           </li>
-          <li className="relative pl-5">
-            <span className="absolute left-0 top-2 text-slate-400">•</span>
-            Communicate requirements and findings to technical and business teams
+          <li className="flex items-start gap-3">
+            <span className="mt-1 text-slate-400">•</span>
+            <span>Communicate requirements and findings to technical and business teams</span>
           </li>
         </ul>
       </div>
@@ -112,17 +112,17 @@ export default function Home() {
           Governance Focus
         </h3>
         <ul className="space-y-3 text-slate-300">
-          <li className="relative pl-5">
-            <span className="absolute left-0 top-2 text-slate-400">•</span>
-            SOX ITGC support and scope alignment
+          <li className="flex items-start gap-3">
+            <span className="mt-1 text-slate-400">•</span>
+            <span>SOX ITGC support and scope alignment</span>
           </li>
-          <li className="relative pl-5">
-            <span className="absolute left-0 top-2 text-slate-400">•</span>
-            Audit readiness and evidence coordination
+          <li className="flex items-start gap-3">
+            <span className="mt-1 text-slate-400">•</span>
+            <span>Audit readiness and evidence coordination</span>
           </li>
-          <li className="relative pl-5">
-            <span className="absolute left-0 top-2 text-slate-400">•</span>
-            Risk identification, tracking, and remediation support
+          <li className="flex items-start gap-3">
+            <span className="mt-1 text-slate-400">•</span>
+            <span>Risk identification, tracking, and remediation support</span>
           </li>
         </ul>
       </div>
@@ -133,17 +133,17 @@ export default function Home() {
           Tools &amp; Frameworks
         </h3>
         <ul className="space-y-3 text-slate-300">
-          <li className="relative pl-5">
-            <span className="absolute left-0 top-2 text-slate-400">•</span>
-            SOX ITGC and NIST CSF
+          <li className="flex items-start gap-3">
+            <span className="mt-1 text-slate-400">•</span>
+            <span>SOX ITGC and NIST CSF</span>
           </li>
-          <li className="relative pl-5">
-            <span className="absolute left-0 top-2 text-slate-400">•</span>
-            Workiva for SOX tracking, evidence, and reporting
+          <li className="flex items-start gap-3">
+            <span className="mt-1 text-slate-400">•</span>
+            <span>Workiva for SOX tracking, evidence, and reporting</span>
           </li>
-          <li className="relative pl-5">
-            <span className="absolute left-0 top-2 text-slate-400">•</span>
-            ServiceNow and Jira for issue tracking and workflow coordination
+          <li className="flex items-start gap-3">
+            <span className="mt-1 text-slate-400">•</span>
+            <span>ServiceNow and Jira for issue tracking and workflow coordination</span>
           </li>
         </ul>
       </div>

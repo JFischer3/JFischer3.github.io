@@ -1,68 +1,120 @@
-import { GraduationCap, BookOpen, Award, Calendar, MapPin } from 'lucide-react';
-import { motion } from 'motion/react';
+import { GraduationCap, BookOpen, Calendar, MapPin, CheckCircle2 } from "lucide-react";
+import { motion } from "motion/react";
+
+type EduItem = {
+  program: string;
+  school: string;
+  period: string;
+  location?: string;
+  statusBadge?: string;
+  description: string;
+  highlights: string[];
+  tags: string[];
+};
 
 export default function Education() {
-  const education = [
+  const education: EduItem[] = [
     {
-      degree: "B.S. in Management Information Systems",
-      school: "University of Technology",
-      period: "2014 - 2018",
-      location: "San Francisco, CA",
-      description: "Focused on the intersection of business processes and information technology. Specialized in systems analysis, database management, and enterprise resource planning.",
+      program: "B.S. Cybersecurity and Information Assurance (BSCSIA)",
+      school: "Western Governors University (WGU)",
+      period: "Starting Mar 2026",
+      location: "Remote",
+      statusBadge: "Incoming",
+      description:
+        "Beginning my BSCSIA to deepen my technical foundation while building on my IT compliance and SOX ITGC experience. I’m focused on strengthening core security concepts, governance, and risk-based thinking as I progress through the program.",
       highlights: [
-        "Dean's List: 2016, 2017, 2018",
-        "Senior Capstone: Developed a mock GRC framework for a local non-profit",
-        "Relevant Coursework: IT Audit, Information Security, Business Analytics, Database Design"
-      ]
-    }
-  ];
-
-  const academicProjects = [
-    {
-      title: "Enterprise Risk Assessment Simulation",
-      desc: "Conducted a comprehensive risk assessment for a hypothetical financial institution, identifying 20+ high-risk areas and proposing mitigation strategies.",
-      tags: ["Risk Management", "Business Impact Analysis"]
+        "Competency-based program focused on real-world skills",
+        "Building depth across security fundamentals and governance",
+        "Active portfolio development alongside coursework",
+      ],
+      tags: ["Cybersecurity", "Information Assurance", "GRC Foundations"],
     },
     {
-      title: "Database Security Audit",
-      desc: "Performed a security audit on a SQL database, identifying vulnerabilities in access controls and data encryption methods.",
-      tags: ["SQL", "Security Audit", "Access Control"]
-    }
+      program: "Cybersecurity Program (18-week) • Honors",
+      school: "Correlation One",
+      period: "Jul 2023 - Nov 2023",
+      location: "Online",
+      statusBadge: "Completed",
+      description:
+        "Completed an intensive cybersecurity program with honors, building hands-on exposure across core security domains and practical fundamentals that support my compliance and GRC path.",
+      highlights: [
+        "Threat analysis and security fundamentals",
+        "Risk concepts and incident response basics",
+        "Technical practice with Linux and networking fundamentals",
+      ],
+      tags: ["Risk", "Incident Response", "Linux", "Networking"],
+    },
+  ];
+
+  const supplemental = [
+    {
+      title: "Professional Certificates & Simulations",
+      items: [
+        "Google Cybersecurity Professional Certificate (Completed Oct 2023)",
+        "Digital Assurance & Transparency Simulation (Forage, Mar 2024)",
+        "Cyber Security Consulting Simulation (Forage, Mar 2024)",
+      ],
+    },
+    {
+      title: "What I’m building toward",
+      items: [
+        "Stronger technical depth to complement IT compliance work",
+        "Clear, evidence-based documentation and audit-ready communication",
+        "Hands-on portfolio artifacts that map to real compliance workflows",
+      ],
+    },
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12 space-y-20">
+    <div className="max-w-5xl mx-auto px-6 py-12 space-y-16">
       <header className="space-y-4">
         <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white">
-          Academic <span className="text-enterprise-accent">Foundation</span>
+          Education <span className="text-enterprise-accent">and Training</span>
         </h1>
-        <p className="text-lg text-slate-400 max-w-2xl">
-          My educational background provides the theoretical and technical foundation for my career in IT Compliance and Governance.
+        <p className="text-lg text-slate-400 max-w-3xl">
+          The programs and training that support my IT Compliance and GRC career path.
         </p>
       </header>
 
-      <section className="space-y-12">
+      {/* Education Cards */}
+      <section className="space-y-8">
         {education.map((edu, i) => (
           <motion.div
-            key={edu.degree}
-            initial={{ opacity: 0, y: 20 }}
+            key={edu.program}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1 }}
-            className="glass-card p-8 rounded-2xl border-l-4 border-enterprise-accent relative overflow-hidden"
+            transition={{ delay: i * 0.08 }}
+            className="glass-card p-8 rounded-2xl border border-white/10 hover:border-enterprise-accent/25 transition-all relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+            <div className="absolute top-0 right-0 p-8 opacity-[0.06] pointer-events-none">
               <GraduationCap className="w-32 h-32" />
             </div>
-            
-            <div className="relative z-10 space-y-6">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                  <h2 className="text-2xl font-bold text-white">{edu.degree}</h2>
+
+            <div className="relative z-10 space-y-5">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h2 className="text-2xl font-bold text-white">{edu.program}</h2>
+                    {edu.statusBadge && (
+                      <span className="text-[10px] px-2 py-1 rounded-full bg-enterprise-accent/10 border border-enterprise-accent/25 text-enterprise-accent font-bold uppercase tracking-wider">
+                        {edu.statusBadge}
+                      </span>
+                    )}
+                  </div>
                   <p className="text-enterprise-accent font-semibold text-lg">{edu.school}</p>
                 </div>
-                <div className="flex flex-col md:items-end text-slate-500 text-sm font-mono">
-                  <div className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {edu.period}</div>
-                  <div className="flex items-center gap-2"><MapPin className="w-4 h-4" /> {edu.location}</div>
+
+                <div className="flex flex-col md:items-end text-slate-500 text-sm font-mono gap-1">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>{edu.period}</span>
+                  </div>
+                  {edu.location && (
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>{edu.location}</span>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -70,51 +122,64 @@ export default function Education() {
                 {edu.description}
               </p>
 
-              <div className="space-y-3">
-                <h4 className="text-white font-bold text-sm uppercase tracking-widest">Key Highlights</h4>
-                <ul className="grid md:grid-cols-2 gap-3">
-                  {edu.highlights.map((highlight, j) => (
-                    <li key={j} className="flex items-start gap-3 text-sm text-slate-400">
-                      <CheckCircle className="w-4 h-4 text-enterprise-accent shrink-0 mt-0.5" />
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  <h4 className="text-white font-bold text-sm uppercase tracking-widest">Highlights</h4>
+                  <ul className="space-y-2">
+                    {edu.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-3 text-sm text-slate-300">
+                        <CheckCircle2 className="w-4 h-4 text-enterprise-accent shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="space-y-3">
+                  <h4 className="text-white font-bold text-sm uppercase tracking-widest">Focus Areas</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {edu.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] bg-slate-900/40 border border-white/10 text-slate-300 px-3 py-1 rounded-full font-semibold"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
         ))}
       </section>
 
-      <section className="space-y-8">
+      {/* Supplemental */}
+      <section className="space-y-6">
         <div className="flex items-center gap-3">
           <BookOpen className="text-enterprise-accent w-6 h-6" />
-          <h2 className="text-2xl font-bold text-white">Academic Projects</h2>
+          <h2 className="text-2xl font-bold text-white">Additional Training</h2>
         </div>
+
         <div className="grid md:grid-cols-2 gap-6">
-          {academicProjects.map((project, i) => (
-            <div key={project.title} className="glass-card p-6 rounded-xl hover:border-enterprise-accent/30 transition-all">
-              <h3 className="text-lg font-bold text-white mb-3">{project.title}</h3>
-              <p className="text-slate-400 text-sm mb-4 leading-relaxed">{project.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map(tag => (
-                  <span key={tag} className="text-[10px] bg-slate-900/50 border border-white/5 text-slate-500 px-2 py-1 rounded uppercase font-bold tracking-wider">
-                    {tag}
-                  </span>
+          {supplemental.map((block) => (
+            <div
+              key={block.title}
+              className="glass-card p-6 rounded-2xl border border-white/10 hover:border-enterprise-accent/25 transition-all"
+            >
+              <h3 className="text-lg font-bold text-white mb-4">{block.title}</h3>
+              <ul className="space-y-2">
+                {block.items.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-slate-300">
+                    <span className="mt-1 text-slate-500">•</span>
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
       </section>
     </div>
-  );
-}
-
-function CheckCircle({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-    </svg>
   );
 }

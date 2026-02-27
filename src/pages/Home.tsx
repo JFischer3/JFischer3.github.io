@@ -1,7 +1,7 @@
 import { Shield, Download, CheckCircle, Lock, FileText, Award, Briefcase, Settings } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import profileImg from '../assets/profile.jpg';
+import profileImg from '../assets/Profile.png';
 
 export default function Home() {
   return (

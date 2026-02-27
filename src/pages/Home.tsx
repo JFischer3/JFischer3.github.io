@@ -42,7 +42,7 @@ export default function Home() {
               <span className="text-enterprise-accent">GRC Analyst</span>
             </h1>
             <p className="text-lg text-slate-400 mb-10 max-w-xl leading-relaxed">
-              Bridging the gap between technical controls and regulatory requirements. Specialist in <span className="text-slate-100 font-semibold">SOX ITGC</span>, <span className="text-slate-100 font-semibold">NIST CSF</span>, and ensuring audit readiness through proactive risk management.
+              IT Compliance Analyst specializing in control design, audit readiness, and risk management. Proficient in <span className="text-slate-100 font-semibold">SOX ITGC</span> and <span className="text-slate-100 font-semibold">NIST CSF</span>, and currently pursuing a <span className="text-slate-100 font-semibold">B.S. in Cybersecurity and Information Assurance at WGU</span>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 

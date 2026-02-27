@@ -126,20 +126,20 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "SOX & Internal Controls",
-              desc: "Implementing and testing IT General Controls (ITGC) to ensure the integrity of financial reporting systems.",
+              title: "SOX ITGC Support",
+              desc: "Supporting SOX IT General Controls through documentation review, evidence coordination, and control understanding to help maintain audit readiness.",
               icon: Shield,
               color: "text-enterprise-accent"
             },
             {
-              title: "Audit Readiness",
-              desc: "Preparing teams for external audits by identifying gaps, documenting processes, and curating evidence.",
+              title: "Audit Preparation & Evidence",
+              desc: "Assisting audit readiness by identifying documentation gaps, organizing supporting evidence, and aligning materials with auditor expectations.",
               icon: Award,
               color: "text-enterprise-warning"
             },
             {
-              title: "Risk Assessment",
-              desc: "Conducting qualitative and quantitative risk analysis to prioritize remediation efforts across the enterprise.",
+              title: "Risk & Issue Tracking",
+              desc: "Supporting risk identification and remediation efforts through issue tracking, documentation updates, and cross-functional coordination.",
               icon: Settings,
               color: "text-green-500"
             }

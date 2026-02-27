@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import profileImg from "../assets/Profile.png";
+import profileImg from "../assets/Profilepicture.png";
 
 export default function About() {
   const expertise = [

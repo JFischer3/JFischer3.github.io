@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Public Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-enterprise-dark: #0f172a;
+  --color-enterprise-surface: #1e293b;
+  --color-enterprise-accent: #3b82f6;
+  --color-enterprise-warning: #f59e0b;
+  --color-enterprise-muted: #94a3b8;
+  
+  --color-audit-orange: #ec5b13;
+}
+
+@layer base {
+  body {
+    @apply bg-enterprise-dark text-slate-200 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-enterprise-surface/70 backdrop-blur-md border border-white/10;
+  }
+  
+  .timeline-line {
+    @apply absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-enterprise-accent via-enterprise-surface to-transparent;
+  }
+}

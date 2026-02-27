@@ -21,9 +21,9 @@ export default function Home() {
         Secure • Compliant • Resilient
       </div>
 
-  <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white">
+  <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight md:leading-snug mb-6 text-white">
   IT Compliance Analyst <br />
-  <span className="text-enterprise-accent">WGU Student</span>
+  <span className="text-enterprise-accent">&amp; WGU Student</span>
 </h1>
 
      <p className="text-lg text-slate-400 mb-10 max-w-xl leading-relaxed">

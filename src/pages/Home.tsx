@@ -16,6 +16,24 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
+            {/* Profile */}
+           <div className="flex items-center gap-4 mb-6">
+           <div className="relative">
+           <div className="absolute -inset-1 rounded-full bg-enterprise-accent/30 blur-md" />
+            <img
+                src={profileImg}
+                alt="Jordan Fischer"
+                className="relative w-16 h-16 rounded-full object-cover border border-white/10"
+                loading="eager"
+                />
+            </div>
+
+            <div className="leading-tight">
+            <div className="text-white font-bold">Jordan Fischer</div>
+            <div className="text-slate-400 text-sm">IT Compliance • GRC</div>
+            </div>
+            </div>
+
             <div className="inline-block px-3 py-1 mb-6 rounded-full bg-enterprise-accent/10 border border-enterprise-accent/30 text-enterprise-accent text-xs font-bold uppercase tracking-wider font-mono">
               Secure • Compliant • Resilient
             </div>

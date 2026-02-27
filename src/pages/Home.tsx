@@ -73,15 +73,6 @@ export default function Home() {
               <div className="text-slate-400 text-sm">IT Compliance Analyst • WGU Student</div>
               <div className="text-slate-500 text-xs mt-1">Columbia, PA</div>
             </div>
-
-            <div className="flex gap-3 pt-2">
-              <div className="px-3 py-1 rounded-full bg-slate-800 border border-white/5 text-xs font-semibold">
-                SOX ITGC
-              </div>
-              <div className="px-3 py-1 rounded-full bg-slate-800 border border-white/5 text-xs font-semibold">
-                NIST CSF
-              </div>
-            </div>
           </div>
         </div>
       </div>

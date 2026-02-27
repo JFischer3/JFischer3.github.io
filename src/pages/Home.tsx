@@ -90,9 +90,10 @@ export default function Home() {
           My Approach
         </h3>
         <p className="text-slate-300 leading-relaxed">
-          I approach IT compliance by balancing control effectiveness, audit expectations,
-          and real-world operational impact. My focus is on building controls that are
-          defensible, understandable, and sustainable.
+        I approach IT compliance by balancing control effectiveness, 
+          audit expectations, and real-world operational impact. 
+          My focus is on evaluating controls, supporting audit readiness, 
+          and ensuring requirements are clearly documented, understood, and consistently applied.
         </p>
       </div>
 

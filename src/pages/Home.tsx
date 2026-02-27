@@ -80,44 +80,45 @@ export default function Home() {
   </div>
 </section>
 
-     {/* How I Approach Compliance */}
+    {/* Credibility Banner */}
 <section className="py-16 border-y border-white/5">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid md:grid-cols-3 gap-12">
-
+      {/* My Approach */}
       <div>
         <h3 className="text-sm uppercase tracking-widest text-slate-400 mb-3">
           My Approach
         </h3>
-        <p className="text-slate-300 leading-relaxed">
-        I approach IT compliance by balancing control effectiveness, 
-          audit expectations, and real-world operational impact. 
-          My focus is on evaluating controls, supporting audit readiness, 
-          and ensuring requirements are clearly documented, understood, and consistently applied.
-        </p>
+        <ul className="space-y-2 text-slate-300 leading-relaxed">
+          <li>• Evaluate ITGC design and operating effectiveness</li>
+          <li>• Support audit readiness through clarity and consistency</li>
+          <li>• Communicate requirements and findings to technical and business teams</li>
+        </ul>
       </div>
 
+      {/* Governance Focus */}
       <div>
         <h3 className="text-sm uppercase tracking-widest text-slate-400 mb-3">
           Governance Focus
         </h3>
-        <ul className="space-y-2 text-slate-300">
-          <li>• SOX ITGC design and testing support</li>
-          <li>• Audit readiness and evidence alignment</li>
-          <li>• Risk identification and remediation tracking</li>
+        <ul className="space-y-2 text-slate-300 leading-relaxed">
+          <li>• SOX ITGC support and scope alignment</li>
+          <li>• Audit readiness and evidence coordination</li>
+          <li>• Risk identification, tracking, and remediation support</li>
         </ul>
       </div>
 
+      {/* Tools & Frameworks */}
       <div>
         <h3 className="text-sm uppercase tracking-widest text-slate-400 mb-3">
-          Tools & Frameworks
+          Tools &amp; Frameworks
         </h3>
-        <p className="text-slate-300 leading-relaxed">
-          I work primarily with SOX ITGC and the NIST CSF, using tools like Workiva,
-          ServiceNow, and Jira to support documentation, workflows, and audit evidence.
-        </p>
+        <ul className="space-y-2 text-slate-300 leading-relaxed">
+          <li>• SOX ITGC and NIST CSF</li>
+          <li>• Workiva for SOX tracking, evidence, and reporting</li>
+          <li>• ServiceNow and Jira for issue tracking and workflow coordination</li>
+        </ul>
       </div>
-
     </div>
   </div>
 </section>

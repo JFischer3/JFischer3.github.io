@@ -80,19 +80,29 @@ export default function Home() {
   </div>
 </section>
 
-    {/* Credibility Banner */}
+  {/* Credibility Banner */}
 <section className="py-16 border-y border-white/5">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid md:grid-cols-3 gap-12">
+
       {/* My Approach */}
       <div>
         <h3 className="text-sm uppercase tracking-widest text-slate-400 mb-3">
           My Approach
         </h3>
-        <ul className="space-y-2 text-slate-300 leading-relaxed">
-          <li>• Evaluate ITGC design and operating effectiveness</li>
-          <li>• Support audit readiness through clarity and consistency</li>
-          <li>• Communicate requirements and findings to technical and business teams</li>
+        <ul className="space-y-3 text-slate-300">
+          <li className="relative pl-5">
+            <span className="absolute left-0 top-2 text-slate-400">•</span>
+            Evaluate ITGC design and operating effectiveness
+          </li>
+          <li className="relative pl-5">
+            <span className="absolute left-0 top-2 text-slate-400">•</span>
+            Support audit readiness through clarity and consistency
+          </li>
+          <li className="relative pl-5">
+            <span className="absolute left-0 top-2 text-slate-400">•</span>
+            Communicate requirements and findings to technical and business teams
+          </li>
         </ul>
       </div>
 
@@ -101,10 +111,19 @@ export default function Home() {
         <h3 className="text-sm uppercase tracking-widest text-slate-400 mb-3">
           Governance Focus
         </h3>
-        <ul className="space-y-2 text-slate-300 leading-relaxed">
-          <li>• SOX ITGC support and scope alignment</li>
-          <li>• Audit readiness and evidence coordination</li>
-          <li>• Risk identification, tracking, and remediation support</li>
+        <ul className="space-y-3 text-slate-300">
+          <li className="relative pl-5">
+            <span className="absolute left-0 top-2 text-slate-400">•</span>
+            SOX ITGC support and scope alignment
+          </li>
+          <li className="relative pl-5">
+            <span className="absolute left-0 top-2 text-slate-400">•</span>
+            Audit readiness and evidence coordination
+          </li>
+          <li className="relative pl-5">
+            <span className="absolute left-0 top-2 text-slate-400">•</span>
+            Risk identification, tracking, and remediation support
+          </li>
         </ul>
       </div>
 
@@ -113,12 +132,22 @@ export default function Home() {
         <h3 className="text-sm uppercase tracking-widest text-slate-400 mb-3">
           Tools &amp; Frameworks
         </h3>
-        <ul className="space-y-2 text-slate-300 leading-relaxed">
-          <li>• SOX ITGC and NIST CSF</li>
-          <li>• Workiva for SOX tracking, evidence, and reporting</li>
-          <li>• ServiceNow and Jira for issue tracking and workflow coordination</li>
+        <ul className="space-y-3 text-slate-300">
+          <li className="relative pl-5">
+            <span className="absolute left-0 top-2 text-slate-400">•</span>
+            SOX ITGC and NIST CSF
+          </li>
+          <li className="relative pl-5">
+            <span className="absolute left-0 top-2 text-slate-400">•</span>
+            Workiva for SOX tracking, evidence, and reporting
+          </li>
+          <li className="relative pl-5">
+            <span className="absolute left-0 top-2 text-slate-400">•</span>
+            ServiceNow and Jira for issue tracking and workflow coordination
+          </li>
         </ul>
       </div>
+
     </div>
   </div>
 </section>

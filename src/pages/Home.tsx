@@ -80,37 +80,46 @@ export default function Home() {
   </div>
 </section>
 
-      {/* Credibility Strip */}
-      <section className="py-12 bg-enterprise-surface/50 border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/5">
-            <div className="py-4 md:py-0">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Certifications</p>
-              <div className="flex justify-center gap-3">
-                <span className="bg-slate-900 px-3 py-1 rounded border border-white/5 text-sm font-semibold">CompTIA Security+</span>
-                <span className="bg-slate-900 px-3 py-1 rounded border border-white/5 text-sm font-semibold">CISA Candidate</span>
-              </div>
-            </div>
-            <div className="py-4 md:py-0">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Frameworks</p>
-              <div className="flex justify-center gap-3">
-                <span className="bg-slate-900 px-3 py-1 rounded border border-white/5 text-sm font-semibold">NIST CSF</span>
-                <span className="bg-slate-900 px-3 py-1 rounded border border-white/5 text-sm font-semibold">ISO 27001</span>
-                <span className="bg-slate-900 px-3 py-1 rounded border border-white/5 text-sm font-semibold">SOX</span>
-              </div>
-            </div>
-            <div className="py-4 md:py-0">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Core Tools</p>
-              <div className="flex justify-center gap-3">
-                <span className="bg-slate-900 px-3 py-1 rounded border border-white/5 text-sm font-semibold">Workiva</span>
-                <span className="bg-slate-900 px-3 py-1 rounded border border-white/5 text-sm font-semibold">ServiceNow</span>
-                <span className="bg-slate-900 px-3 py-1 rounded border border-white/5 text-sm font-semibold">Jira</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     {/* How I Approach Compliance */}
+<section className="py-16 border-y border-white/5">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid md:grid-cols-3 gap-12">
 
+      <div>
+        <h3 className="text-sm uppercase tracking-widest text-slate-400 mb-3">
+          My Approach
+        </h3>
+        <p className="text-slate-300 leading-relaxed">
+          I approach IT compliance by balancing control effectiveness, audit expectations,
+          and real-world operational impact. My focus is on building controls that are
+          defensible, understandable, and sustainable.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-sm uppercase tracking-widest text-slate-400 mb-3">
+          Governance Focus
+        </h3>
+        <ul className="space-y-2 text-slate-300">
+          <li>• SOX ITGC design and testing support</li>
+          <li>• Audit readiness and evidence alignment</li>
+          <li>• Risk identification and remediation tracking</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-sm uppercase tracking-widest text-slate-400 mb-3">
+          Tools & Frameworks
+        </h3>
+        <p className="text-slate-300 leading-relaxed">
+          I work primarily with SOX ITGC and the NIST CSF, using tools like Workiva,
+          ServiceNow, and Jira to support documentation, workflows, and audit evidence.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* Featured Focus Areas */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">

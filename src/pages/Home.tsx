@@ -30,7 +30,7 @@ export default function Home() {
 
             <div className="leading-tight">
             <div className="text-white font-bold">Jordan Fischer</div>
-            <div className="text-slate-400 text-sm">IT Compliance • GRC</div>
+            <div className="text-slate-400 text-sm">Columbia, PA</div>
             </div>
             </div>
 
